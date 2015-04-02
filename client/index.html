@@ -20,6 +20,10 @@
     <!-- build:css({.tmp,client}) app/app.css -->
     <link rel="stylesheet" href="app/app.css">
       <!-- injector:css -->
+      <link rel="stylesheet" href="app/FindAgent/FindAgent.css">
+      <link rel="stylesheet" href="app/FindJob/FindJob.css">
+      <link rel="stylesheet" href="app/FindTalent/FindTalent.css">
+      <link rel="stylesheet" href="app/Testimonials/Testimonials.css">
       <link rel="stylesheet" href="app/app.css">
       <link rel="stylesheet" href="app/main/main.css">
       <link rel="stylesheet" href="components/modal/modal.css">
@@ -30,9 +34,30 @@
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
+<header>
+    <!--Nav Bar-->
+    <div ng-include="'./components/navbar/navbar.html'"></div>
+
+
+
+      <div class="container">
+
+      </div>
+    </header>
 
     <!-- Add your site or application content here -->
     <div ng-view=""></div>
+
+    <!--Footer-->
+    <footer class="footer">
+      <div class="container">
+        <p>Angular Fullstack v2.0.13 |
+          <a href="">Yusuf</a> |
+          <a href="">Salman</a> |
+          <a href="">Jennifer</a> |
+          <a href="">Dien</a>
+      </div>
+    </footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -65,6 +90,14 @@
         <!-- build:js({.tmp,client}) app/app.js -->
         <script src="app/app.js"></script>
           <!-- injector:js -->
+          <script src="app/FindAgent/FindAgent.controller.js"></script>
+          <script src="app/FindAgent/FindAgent.js"></script>
+          <script src="app/FindJob/FindJob.controller.js"></script>
+          <script src="app/FindJob/FindJob.js"></script>
+          <script src="app/FindTalent/FindTalent.controller.js"></script>
+          <script src="app/FindTalent/FindTalent.js"></script>
+          <script src="app/Testimonials/Testimonials.controller.js"></script>
+          <script src="app/Testimonials/Testimonials.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
           <script src="components/modal/modal.service.js"></script>
