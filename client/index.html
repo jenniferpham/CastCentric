@@ -24,40 +24,21 @@
       <link rel="stylesheet" href="app/FindJob/FindJob.css">
       <link rel="stylesheet" href="app/FindTalent/FindTalent.css">
       <link rel="stylesheet" href="app/Testimonials/Testimonials.css">
+      <link rel="stylesheet" href="app/account/login/login.css">
+      <link rel="stylesheet" href="app/admin/admin.css">
       <link rel="stylesheet" href="app/app.css">
       <link rel="stylesheet" href="app/main/main.css">
       <link rel="stylesheet" href="components/modal/modal.css">
       <!-- endinjector -->
     <!-- endbuild -->
   </head>
-  <body ng-app="castCentricAppApp">
+  <body ng-app="castCentricApp">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-<header>
-    <!--Nav Bar-->
-    <div ng-include="'./components/navbar/navbar.html'"></div>
-
-
-
-      <div class="container">
-
-      </div>
-    </header>
 
     <!-- Add your site or application content here -->
     <div ng-view=""></div>
-
-    <!--Footer-->
-    <footer class="footer">
-      <div class="container">
-        <p>Angular Fullstack v2.0.13 |
-          <a href="">Yusuf</a> |
-          <a href="">Salman</a> |
-          <a href="">Jennifer</a> |
-          <a href="">Dien</a>
-      </div>
-    </footer>
 
     <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
     <script>
@@ -98,9 +79,18 @@
           <script src="app/FindTalent/FindTalent.js"></script>
           <script src="app/Testimonials/Testimonials.controller.js"></script>
           <script src="app/Testimonials/Testimonials.js"></script>
+          <script src="app/account/account.js"></script>
+          <script src="app/account/login/login.controller.js"></script>
+          <script src="app/account/settings/settings.controller.js"></script>
+          <script src="app/account/signup/signup.controller.js"></script>
+          <script src="app/admin/admin.controller.js"></script>
+          <script src="app/admin/admin.js"></script>
           <script src="app/main/main.controller.js"></script>
           <script src="app/main/main.js"></script>
+          <script src="components/auth/auth.service.js"></script>
+          <script src="components/auth/user.service.js"></script>
           <script src="components/modal/modal.service.js"></script>
+          <script src="components/mongoose-error/mongoose-error.directive.js"></script>
           <script src="components/navbar/navbar.controller.js"></script>
           <!-- endinjector -->
         <!-- endbuild -->

@@ -5,7 +5,7 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/castcentricapp-dev'
+    uri: 'mongodb://jenniferpham:mongo@ds059661.mongolab.com:59661/castcentric'
   },
 
   seedDB: true
