@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('castcentricApp', [
+angular.module('castCentricAppApp', [
   'ngCookies',
   'ngResource',
   'ngSanitize',

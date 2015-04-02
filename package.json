@@ -1,5 +1,5 @@
 {
-  "name": "castcentric",
+  "name": "cast-centric-app",
   "version": "0.0.0",
   "main": "server/app.js",
   "dependencies": {

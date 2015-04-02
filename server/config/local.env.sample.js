@@ -7,7 +7,7 @@
 
 module.exports = {
   DOMAIN:           'http://localhost:9000',
-  SESSION_SECRET:   'castcentric-secret',
+  SESSION_SECRET:   'castcentricapp-secret',
 
   // Control debug level for modules using visionmedia/debug
   DEBUG: ''

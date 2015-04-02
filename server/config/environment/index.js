@@ -26,7 +26,7 @@ var all = {
 
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {
-    session: 'castcentric-secret'
+    session: 'cast-centric-app-secret'
   },
 
   // List of user roles

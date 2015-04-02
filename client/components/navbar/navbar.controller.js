@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('castcentricApp')
+angular.module('castCentricAppApp')
   .controller('NavbarCtrl', function ($scope, $location) {
     $scope.menu = [{
       'title': 'Home',

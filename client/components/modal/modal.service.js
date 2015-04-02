@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('castcentricApp')
+angular.module('castCentricApp')
   .factory('Modal', function ($rootScope, $modal) {
     /**
      * Opens a modal

@@ -5,6 +5,6 @@
 module.exports = {
   // MongoDB connection options
   mongo: {
-    uri: 'mongodb://localhost/castcentric-test'
+    uri: 'mongodb://localhost/castcentricapp-test'
   }
 };
