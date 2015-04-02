@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('castCentricAppApp')
+angular.module('castCentricApp')
   .config(function ($routeProvider) {
     $routeProvider
       .when('/FindJob', {

@@ -3,7 +3,7 @@
 describe('Controller: FindAgentCtrl', function () {
 
   // load the controller's module
-  beforeEach(module('castCentricAppApp'));
+  beforeEach(module('castCentricApp'));
 
   var FindAgentCtrl, scope;
 

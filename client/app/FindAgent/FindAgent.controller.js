@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('castCentricAppApp')
+angular.module('castCentricApp')
   .controller('FindAgentCtrl', function ($scope) {
     $scope.message = 'Hello';
   });
