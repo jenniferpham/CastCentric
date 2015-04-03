@@ -7,7 +7,7 @@ Actor.find({}).remove(function(){
 	Actor.create({
 	Name: 'Joe Cool',
 	Email:'joe@gmail.com',
-	ProfileImage: '',
+	ProfileImage: 'http://s3-media1.fl.yelpassets.com/bphoto/nf2lPpoAlNL-_erxACkeJw/l.jpg',
 	Role:'actor',
 	Location: 'Santa Monica, Ca',
 	WorkHistory: {
@@ -26,7 +26,7 @@ Actor.find({}).remove(function(){
 		Build: 'Built',
 		Hair: 'Comb Over',
 		Eyes: 'Green',
-		Ethnicity: 'Asian'
+		Ethnicity: 'Spanish'
 	},
 	EducationTraining:{
 		School: 'Santa Monica College',
