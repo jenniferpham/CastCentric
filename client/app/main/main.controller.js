@@ -4,7 +4,7 @@ angular.module('castCentricApp')
   .controller('MainCtrl', function ($scope, $http) {
     $scope.awesomeThings = [];
 
-    $http.get('/api/things').success(function(awesomeThings) {
+    $http.get('/api/things').success(function(awesomeThings) {  //bridge with server (app.use in routes.js). when it gets the data, awesomethings accessible from html
       $scope.awesomeThings = awesomeThings;
     });
 
@@ -19,4 +19,14 @@ angular.module('castCentricApp')
     $scope.deleteThing = function(thing) {
       $http.delete('/api/things/' + thing._id);
     };
+  })
+  .controller('validFormCtrl', function($scope){
+    $scope.addNewUser = function(isValid){
+      if(isValid) {
+        alert("Get ready to see some goodies!")
+      }
+      else{
+        alert("Please fill out form completely")
+      }
+    }
   });
