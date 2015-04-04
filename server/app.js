@@ -18,6 +18,7 @@ mongoose.connect(config.mongo.uri, config.mongo.options);
 if(config.seedDB) { require('./config/seed'); }
 require('./config/actor.data')
 require('./config/director.data')
+require('./config/agency.data')
 
 // Setup server
 var app = express();
