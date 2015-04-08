@@ -1,57 +1,106 @@
-
-
-<!--<header class="hero-unit" id="banner">
-  <div class="container">
-    <h1>CastCentric</h1>
-    <p class="lead">Become a Hollywood star today!</p>
-    <img src="./assets/images/redcarpet.jpg" alt="Join CastCentric today" class="img-responsive center-block">
-  </div>
-</header>-->
-<div class="row">
-    <div class="col-xs-6 col-sm-3">
-        <img src="./assets/images/tomcruise.jpg" alt="Actors" class="img-circle">
-    </div>
-    <div class="col-xs-6 col-sm-3">
-        <img src="./assets/images/jenrudin-castingdirector.jpg" alt="Directors" class="img-circle">
-    </div>
-</div>
-<div class="clearfix visible-xs-block"></div>
-<div class="container-fluid">
-  <img src="./assets/images/redcarpet.jpg" alt="Join CastCentric today" class="bg" class="img-responsive center-block">
-  <div class="row">
-    <div class="col-xs-6 col-sm-3"><h3>For Actors</h3></div>
-    <div class="col-xs-6 col-sm-3"><h3>For Talent Agents and Directors</h3></div>
+<!--OPTION 1: PICTURE IN BACKGROUND-->
+<div id="background">
+ <img src="./assets/images/redcarpetglamour.jpg" class="stretch"/>
 </div>
 
+<!--OPTION 2: PICTURE ON TOP-->
+<!--<div class="banner" >
+  <img src="./assets/images/star.jpg" class="stretch" />
+</div>-->
 
-    <!-- Add the extra clearfix for only the required viewport -->
-  <div class="clearfix visible-xs-block"></div>
-  <div class="row">
-      <div class="col-xs-6 col-sm-3">Find jobs and auditions
-        Market yourself through headshots, video reels, work experience, and more.
-      </div>
-      <div class="col-xs-6 col-sm-3">Find talented actors
-        Scan through our extensive database of actors for talent that you need
-        See actors’ headshots, video reels, work experience, and more.
-      </div>
-  </div>
-</div>
-</div>
+
+<!--OPTION 3: VIDEO ON TOP-->
+<!--<div id="hero-unit background" class="shift-with-hiw">
+  <video class="video-playing stretch" autoplay muted>
+    <source src="./assets/video/lights.mp4" type="video/mp4">
+  </video>
+</div>-->
+
+
+
 <div class="container">
-  <div class="row">
-    <div class="col-lg-12">
+  <div class="row" id="mainrow">
 
-      <h1 class="page-header">Features:</h1>
-      <ul class="nav nav-tabs nav-stacked col-md-4 col-lg-4 col-sm-6" ng-repeat="thing in awesomeThings">
-        <li><a href="#" tooltip="{{thing.info}}">{{thing.name}}</a></li>
-      </ul>
+    <div class="col-sm-6">
+          <div class="row">
+              <div class="col-sm-4">
+                  <img src="./assets/images/tomcruise.jpg" alt="Actors" class="img-circle">
+              </div>
+              <div class="col-sm-8 box">
+                <h3>For Actors</h3>
+                <ul class="ok">
+                  <li>Find jobs and auditions in your local area or nationwide</li>
+                  <li>Market yourself through headshots, video reels, work experience, and more</li>
+                </ul>
+                <a href="">Find out how CastCentric can help you today!</a><br>
+                <a href="/Testimonials">See what other actors say about CastCentric</a>
+              </div>
+          </div>
+          <div class="row">
+              <div class="col-sm-4">
+                <img src="./assets/images/jenrudin-castingdirector.jpg" alt="Directors" class="img-circle">
+              </div>
+              <div class="col-sm-8 box">
+                <h3>For Casting Directors and Talent Agents</h3>
+                <ul class="ok">
+                  <li>Find talented actors</li>
+                  <li>Scan through our extensive database of actors for talent that you need</li>
+                  <li>See actors’ headshots, video reels, work experience, and more</li>
+                </ul>
+                <a href="">Find out how CastCentric can help you today!</a><br>
+                <a href="/Testimonials">See what other agents and directors say about CastCentric</a>
+              </div>
+          </div>
     </div>
+
+   <div class="col-sm-4 " ng-controller="validFormCtrl">
+            <!--FORM-->
+            <!--pass in variable if our form is valid or not-->
+            <form name = userForm id="userForm" ng-submit="addNewUser(userForm.$valid)" novalidate>
+              <!--form-header-->
+              <h3>Join CastCentric Today!</h3>
+              <p>See actor profiles and sign up for jobs and auditions for free!</p>
+
+              <div class="form-group" ng-class="{'has-error': userForm.name.$invalid && !userForm.name.$pristine}">
+                <label for="name">Name</label>
+                <input type="text" id="name" name="name" class="form-control" ng-model="name" required>
+                <!--validation: if you wrote in the textbox but then deleted it, then it'll say "your name is required"-->
+                <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Your name is required.</p>
+              </div>
+              <div class="form-group" ng-class="{'has-error': userForm.email.$invalid && !userForm.email.$pristine}">
+                <label for="email">Email</label>
+                <input name="email" type="email" id="email" class="form-control" ng-model="email" required>
+                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Your email is required</p>
+              </div>
+              <div class="form-group" ng-class="{'has-error': userForm.password.$invalid && !userForm.password.$pristine}">
+                <label for="password">Password</label>
+                <input name="password" type="password" id="password" class="form-control" ng-model="password" ng-minlength="5" ng-maxlength="10" required>
+                <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">Your password must be between 5 to 10 characters.</p>
+              </div>
+              <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
+              <p><a href="/login">I'm already a member.<br>Sign into CastCentric now.</a></p>
+            </form>
+          </div>
+
   </div>
 </div>
+<!--End Form-->
 
 <footer class="footer">
   <div class="container">
       <p>Created By:
-         <a href="">Yusuf</a> | <a href="">Salman</a> | <a href="">Jennifer</a> | <a href="">Dien</a></p>
+         <a href="https://github.com/yusufmd">Yusuf Dadabhoy</a> |
+        <a href="https://github.com/Sdadabhoy">Salman Dadabhoy</a> |
+        <a href="https://github.com/jenniferpham/">Jennifer Pham</a> |
+        <a href="https://github.com/diennguyen90">Dien Nguyen</a></p>
   </div>
 </footer>
+
+
+
+<!--[if lt IE 9]>
+<script>
+  document.createElement('video');
+</script>
+<![endif]-->
+
