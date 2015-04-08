@@ -8,5 +8,6 @@ Agency.find({}).remove(function(){
 		Email: 'Tim@SomeAgency.com',
 		Location: 'Beverly Hills, CA',
 		Description: 'Top notch Agency'
-	})
+	}
+	)
 });

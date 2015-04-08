@@ -79,4 +79,8 @@ form {
   border-radius: 10px;
   margin-bottom: 10px;
 }
+.picList {
+   width: 140px;
+  height: 140px;
+}
 
