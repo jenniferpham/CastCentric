@@ -84,3 +84,15 @@ form {
   height: 140px;
 }
 
+ul.ok {
+  list-style-type: none;
+  margin-left: 0;
+  padding-left: 1em;
+}
+
+ul.ok li:before {
+  font-family: 'FontAwesome';
+  content: '\f00c';
+  margin:0 5px 0 -15px;
+
+}
