@@ -1,0 +1,38 @@
+<div class="col-md-12">
+<div ng-repeat="job in jobs">
+  <!--Detailed job page-->
+  <h3>{{job.production.name}}</h3><br>
+  <!--| filter:{productionname: filter_productionname, productiondesc: filter_productiondesc}-->
+  {{job.production.desc}}<br>
+  Type: {{job.production.type}}<br>
+
+  <strong>Rehearsal:</strong><br>
+  Date: {{job.rehearsal.date}}  |  {{job.rehearsal.loc}}<br>
+  Audition:<br>
+  Date: {{job.audition.date}}  |  {{job.audition.loc}}<br>
+  Production:<br>
+  Date: {{job.production.date}}  |  {{job.production.loc}}<br>
+  <br>
+  Audition Type: {{job.audition.type}}
+
+  <div ng-repeat="role in job.roles">
+    <!--Role preview-->
+    Role Description:
+    Name:  {{role.charactername}}<br>
+    Type: {{role.type}}<br>
+    Gender:  {{role.gender}}<br>
+    Age range:  {{role.age.start}} to {{role.age.end}}<br>
+    Ethnicities:  {{role.ethnicity}}<br>
+    Description:  {{role.description}}<br>
+    <button type="submit" ng-click="seemore=true" ng-hide="seemore">See More Details</button>
+    <button type="submit" ng-click="seemore=false" ng-show="seemore">Close Details</button>
+    <div ng-show="seemore">
+      Nudity yes/no  {{role.nudity}}<br>
+      Compensation: start   end  {{role.comp_min | currency}} to {{role.comp_max | currency}}<br>
+      Union: {{role.union}}
+      Notes: {{role.notes}}
+      Location: {{role.location}}
+    </div>
+  </div>
+</div>
+</div>
