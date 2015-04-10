@@ -1,8 +1,69 @@
 <div class="col-md-12">
+  <ul>
+    <li ng-repeat="job in jobs">
+      <br>Rehearsal Location:
+      {{job.rehearsal.loc}}
+      {{job.production.name}}  <br>
+      Production<br>
+
+    </li>
+  </ul>
+  <p></p>
+  <!--Diplay preview of jobs in job database from server-->
+  <div ng-repeat="job in jobs" class="container">
+    Production1: {{job.production.name}}<p></p>
+    <!--| filter:{productionname: filter_productionname, productiondesc: filter_productiondesc}-->
+
+      <h3>Production INSIDE: {{prod.name}}</h3><br>
+      {{prod.desc}} | Type: {{prod.type}}<br>
+
+    <strong>Rehearsal:</strong><br>
+    Date: {{job.rehearsal.date}}  |  {{job.rehearsal.loc}}<br>
+    Audition:<br>
+    Date: {{job.audition.date}}  |  {{job.audition.loc}}<br>
+    Production:<br>
+    Date: {{job.production.date}}  |  {{job.production.loc}}<br>
+    <br>
+    {{job.audition.type}}
+    <a href='/job/{{job._id}}'><button type="submit">Find Out More</button></a>
+
+  </div>
+  <!--Detailed job page-->
+  <h3>{{job.production.name}}</h3><br>
+  {{job.production.desc}} | Type: {{job.production.type}}<br>
+  Rehearsal:<br>
+  Date: {{job.rehearsal.date}}  |  {{job.rehearsal.loc}}<br>
+  Audition:<br>
+  Date: {{job.audition.date}}  |  {{job.audition.loc}}<br>
+  Production:<br>
+  Date: {{job.production_date}}  |  {{job.production_loc}}<br>
+  <br>
+  {{job.audition.type}}
+  <div ng-repeat="role in job.roles">
+    <!--Role preview-->
+    Role Description:
+    Name:  {{role.charactername}}<br>
+    Type: {{role.type}}<br>
+    Gender:  {{role.gender}}<br>
+    Age range:  {{role.age.start}} to {{role.age.end}}<br>
+    Ethnicities:  {{role.ethnicity}}<br>
+    Description:  {{role.description}}<br>
+    Nudity yes/no  {{role.nudity}}<br>
+    Compensation: start   end  {{role.comp_min | currency}} to {{role.comp_max | currency}}<br>
+    Union: {{role.union}}
+    Notes: {{role.notes}}
+    Location: {{role.location}}
+  </div>
+</div>
     Display record results and filter for jobs/auditions
 
+<!--Filter form-->
     FILTER FORM
     <form>
+      Rehearsal Date: <input type="date"><br>
+
+
+
       Name of Production<br>
       Production Description<br>
       Production Type<br>
