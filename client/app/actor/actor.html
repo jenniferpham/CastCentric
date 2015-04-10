@@ -1,9 +1,17 @@
-<div class="col-md-12"ng-repeat='actor in actors'>
+
+<div class='container' ng-repeat='actor in actors'>
+<div class="col-md-8">
 	<ul>
-		<li><img ng-src='{{actor.ProfileImage}}'></li>
+		<li><img class='picList' ng-src='{{actor.ProfileImage}}'></li>
 		<li>{{actor.Name}}</li>
 		<li>{{actor.Email}}</li>
 		<li>{{actor.Location}}</li>
 		<li></li>
+		</ul>
+</div>
+<div class='col-md-8'>
+<p>{{actor.Name}}</p>
 
+
+</div>
 </div>

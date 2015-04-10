@@ -69,6 +69,39 @@ Actor.find({}).remove(function(){
 	},
 	OpUrl: 'Facebook.com'
 
+	},{
+	Name: 'Janette Freeman',
+	Email:'JFreeman@gmail.com',
+	ProfileImage: 'http://www.janettezilioli.com/sites/default/files/Janette_Zilioli-Headshot8x10.jpg',
+	Role:'actor',
+	Location: 'Santa Monica, Ca',
+	WorkHistory: {
+		Title: 'Avengers',
+		RoleType: 'Lead Role',
+		Director: 'John Whedon',
+		Company: 'Disney'
+	},
+	PhysicalAttribute: {
+		Gender: 'Female',
+		AgeRange:{ 
+			Start: 24,
+		    End: 35
+		},
+		Height: "5'10",
+		Build: 'Built',
+		Hair: 'Comb Over',
+		Eyes: 'Green',
+		Ethnicity: 'Hispanic/Caucasian'
+	},
+	EducationTraining:{
+		School: 'Santa Monica College',
+		Teacher: '',
+		Degree: 'Theater',
+		Location: 'Santa Monica,CA',
+		Year: 2014
+	},
+	OpUrl: 'Facebook.com'
+
 	}
 	)
 });

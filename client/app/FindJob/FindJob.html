@@ -1,8 +1,74 @@
 <div class="col-md-12">
+
+  <!--Diplay preview of jobs in job database from server-->
+  <div ng-repeat="job in jobs" class="container">
+
+      <h3>{{job.production.name}}</h3><br>
+    <!--| filter:{productionname: filter_productionname, productiondesc: filter_productiondesc}-->
+      {{job.production.desc}}<br>
+    Type: {{job.production.type}}<br>
+
+    <strong>Rehearsal:</strong><br>
+    Date: {{job.rehearsal.date}}  |  {{job.rehearsal.loc}}<br>
+    Audition:<br>
+    Date: {{job.audition.date}}  |  {{job.audition.loc}}<br>
+    Production:<br>
+    Date: {{job.production.date}}  |  {{job.production.loc}}<br>
+    <br>
+    Audition Type: {{job.audition.type}}
+    <a href='/job/{{job._id}}'><button type="submit">Find Out More</button></a>
+
+  </div>
+
+  <div ng-repeat="role in job.roles">
+    <!--Role preview-->
+    Role Description:
+    Name:  {{role.charactername}}<br>
+    Type: {{role.type}}<br>
+    Gender:  {{role.gender}}<br>
+    Age range:  {{role.age.start}} to {{role.age.end}}<br>
+    Ethnicities:  {{role.ethnicity}}<br>
+    Description:  {{role.description}}<br>
+    Nudity yes/no  {{role.nudity}}<br>
+    Compensation: start   end  {{role.comp_min | currency}} to {{role.comp_max | currency}}<br>
+    Union: {{role.union}}
+    Notes: {{role.notes}}
+    Location: {{role.location}}
+  </div>
+</div>
     Display record results and filter for jobs/auditions
 
+<!--Filter form-->
     FILTER FORM
     <form>
+      Gender: <br>
+      <input type="checkbox" ng-model="gender" id="female"><label for="female">Female</label>
+      <input type="checkbox" ng-model="gender" id="male"><label for="female">Male</label>
+      <p></p>
+
+      Age:
+      <input type="range" ng-model="age" id="agerange" min="1" max="100">
+      <p></p>
+
+      Ethnicity:
+      <input type="checkbox" ng-model="ethnicity" id="female"><label for="female">Female</label>
+      <input type="checkbox" ng-model="ethnicity" id="male"><label for="female">Male</label>
+
+      Production Type:
+      <input type="checkbox" ng-model="ethnicity" id="female"><label for="female">Female</label>
+      <input type="checkbox" ng-model="ethnicity" id="male"><label for="female">Male</label>
+      <p></p>
+
+      Role Type:
+
+      Compensation
+
+      union
+      location
+      keywords
+
+      Rehearsal Date: <input type="date"><br>
+
       Name of Production<br>
       Production Description<br>
       Production Type<br>
