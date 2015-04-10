@@ -5,7 +5,8 @@ var AgencySchema = new Schema({
 	Company: String,
 	Email: String,
 	Location: String,
-	Description: String
+	Description: String,
+  Image: String
 });
 
 
