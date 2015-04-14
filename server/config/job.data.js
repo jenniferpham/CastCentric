@@ -60,6 +60,5 @@ Job.find({}).remove(function(){
         start: 'April 15, 2015',
         end: 'May 15, 2015'
       }
-  }
-  )
+    });
 });

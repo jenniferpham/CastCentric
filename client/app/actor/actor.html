@@ -1,17 +1,51 @@
 
 <div class='container' ng-repeat='actor in actors'>
-<div class="col-md-8">
-	<ul>
-		<li><img class='picList' ng-src='{{actor.ProfileImage}}'></li>
-		<li>{{actor.Name}}</li>
-		<li>{{actor.Email}}</li>
-		<li>{{actor.Location}}</li>
-		<li></li>
-		</ul>
-</div>
-<div class='col-md-8'>
-<p>{{actor.Name}}</p>
-
-
-</div>
+	<hr>
+		<div class="col-sm-4">
+			<img class='actorPic' ng-src='{{actor.ProfileImage}}'></li>
+		</div>
+			<div class='col-sm-4'>
+					<h1>
+						{{actor.Name}}
+					</h1>
+					<h5>
+						<i>
+							{{actor.Email}}
+						</i>
+					</h5>
+				<hr>
+			<div>
+				<a href='#' class='glyphicon glyphicon-envelope btn btn-danger'> <strong>Contact Me</strong></a>
+			</div>
+				<hr>
+					<h4>
+						<strong>
+							Physical Attributes
+						</strong>
+					</h4>
+				<hr>
+			</div>
+			<div class='row'>
+				<div class='col-xs-5'>
+					<strong>
+						Age Range
+					</strong>:
+					 	{{actor.PhysicalAttribute.AgeRange.Start}}-{{actor.PhysicalAttribute.AgeRange.End}}
+				</div>
+				<div class='col-xs-5'>
+					<strong>
+						Ethnicity
+					</strong>:
+						 {{actor.PhysicalAttribute.Ethnicity}}
+				</div>
+				<div class='col-xs-6'>
+					<strong>
+						<i>
+							Attributes
+						</i>
+					</strong>
+						<br>
+							<strong>Gender</strong>:{{actor.PhysicalAttribute.Gender}}, <strong>Height</strong>:{{actor.PhysicalAttribute.Height}}, <strong>Build</strong>:{{actor.PhysicalAttribute.Build}}, <strong>Eye Color</strong>: {{actor.PhysicalAttribute.Eyes}}, <strong>Hair</strong>: {{actor.PhysicalAttribute.Hair}}
+				</div>
+			</div>
 </div>

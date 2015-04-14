@@ -16,7 +16,7 @@
 	</table>
 </div>
 <hr>
-<div class="nav nav nav-stacked col-md-4 col-md-6 col-sm-6" ng-repeat="actor in actors | filter:{Name:name, Ethnicity:ethnicty}">
+<div class="nav nav nav-stacked col-md-4 col-md-6 col-sm-6" ng-repeat="actor in actors | filter:{Name:name}">
 <div class=''
 <li><a href='/actors/{{actor.Name}}'><img class='picList' src='{{actor.ProfileImage}}'></a></li>
 <li>{{actor.Name}}</li>
