@@ -1,112 +1,102 @@
-<div class="col-md-12">
 
-  <!--Diplay preview of jobs in job database from server-->
-  <div ng-repeat="job in jobs" class="container">
+<div class="container">
+  <div class="row">
 
-      <h3>{{job.production.name}}</h3><br>
-    <!--| filter:{productionname: filter_productionname, productiondesc: filter_productiondesc}-->
-      {{job.production.desc}}<br>
-    Type: {{job.production.type}}<br>
+    <div class="col-md-3">
+      <!--Filter form-->
+      FILTER FORM
+      <form>
+        Gender: <br>
+        <input type="checkbox" ng-model="search.roles.gender.female" id="female" value="female"> Female
+        <input type="checkbox" ng-model="search.roles.gender.male" id="male" value="male"> Male
+        <p></p>
 
-    <strong>Rehearsal:</strong><br>
-    Date: {{job.rehearsal.date}}  |  {{job.rehearsal.loc}}<br>
-    Audition:<br>
-    Date: {{job.audition.date}}  |  {{job.audition.loc}}<br>
-    Production:<br>
-    Date: {{job.production.date}}  |  {{job.production.loc}}<br>
-    <br>
-    Audition Type: {{job.audition.type}}
-    <a href='/job/{{job._id}}'><button type="submit">Find Out More</button></a>
+        Age:
+        <input type="range" ng-model="search.roles.age" id="agerange" min="1" max="100">
+        <p></p>
 
-  </div>
+        Ethnicity:<br>
+        <input type="checkbox" ng-model="ethnicity" id="caucasian"> Caucasian<br>
+        <input type="checkbox" ng-model="ethnicity" id="africanamer"> African American<br>
+        <input type="checkbox" ng-model="ethnicity" id="hispanic"> Hispanic<br>
+        <input type="checkbox" ng-model="ethnicity" id="asian"> Asian<br>
+        <input type="checkbox" ng-model="ethnicity" id="southasian"> South Asian<br>
+        <input type="checkbox" ng-model="ethnicity" id="nativeamer"> Native American<br>
+        <input type="checkbox" ng-model="ethnicity" id="middleeastern"> Middle Eastern<br>
+        <input type="checkbox" ng-model="ethnicity" id="seapi"> Southeast Asian / Pacific Islander<br>
+        <input type="checkbox" ng-model="ethnicity" id="mixed"> Ethnically Ambiguous / Mixed Race<br>
+        <input type="checkbox" ng-model="ethnicity" id="african"> African Descent
+        <p></p>
 
-  <div ng-repeat="role in job.roles">
-    <!--Role preview-->
-    Role Description:
-    Name:  {{role.charactername}}<br>
-    Type: {{role.type}}<br>
-    Gender:  {{role.gender}}<br>
-    Age range:  {{role.age.start}} to {{role.age.end}}<br>
-    Ethnicities:  {{role.ethnicity}}<br>
-    Description:  {{role.description}}<br>
-    Nudity yes/no  {{role.nudity}}<br>
-    Compensation: start   end  {{role.comp_min | currency}} to {{role.comp_max | currency}}<br>
-    Union: {{role.union}}
-    Notes: {{role.notes}}
-    Location: {{role.location}}
+        Production Type:<br>
+        <input type="checkbox" ng-model="productiontype" value="theater"> Theater/Play<br>
+        <input type="checkbox" ng-model="productiontype" value="movie"> Movie<br>
+        <input type="checkbox" ng-model="productiontype" value="tv"> TV Show<br>
+        <input type="checkbox" ng-model="productiontype" value="commercial"> Commercial
+        <p></p>
+
+        Role Type:<br>
+        <input type="checkbox" ng-model="roletype" value="lead"> Lead Role<br>
+        <input type="checkbox" ng-model="roletype" value="supporting"> Supporting Role<br>
+        <input type="checkbox" ng-model="roletype" value="extra"> Extra / Background Role<br>
+        <p></p>
+
+        Compensation (per $__/mo)?<br>
+        <input type="range" ng-model="compensation" id="compensation" min="10" max="10000">
+        <p></p>
+
+        Union Status<br>
+        <input type="radio" value="true" ng-model="union" id="union"> Yes
+        <input type="radio" value="false" ng-model="union" id="nounion"> No
+        <p></p>
+
+        Location:
+        <select ng-model="search.rehearsal.loc">
+          <option value="New York">New York, NY</option>
+          <option value="Los Angeles">Los Angeles, CA</option>
+          <option value="San Francisco">San Francisco, CA</option>
+          <option value="Chicago">Chicago, Il</option>
+        </select>
+        <p></p>
+
+        Keywords:
+        <input type="text" ng-model="search.$">
+      </form>
+   </div>
+  <div class="col-md-8">
+    <!--Diplay preview of jobs in job database from server-->
+    <div class="container" ng-repeat="job in jobs | filter: search">
+    <!--ng-repeat="job in filteredJobs = (jobs | filter:{role.rehearsal.loc: location}) OR | filter: search-->
+        <!--<h3>{{job.production.name}}</h3><br>-->
+      <!--| filter:{productionname: filter_productionname, productiondesc: filter_productiondesc}-->
+        {{job.production.desc}}<br>
+      Type: {{job.production.type}}<br>
+      Date: {{job.production.date}}  |  {{job.production.loc}}<p></p>
+      <strong>Rehearsal:</strong><br>
+      Date: {{job.rehearsal.date.start}} to {{job.rehearsal.date.end}}  |  {{job.rehearsal.loc}}<p></p>
+      <strong>Audition:</strong><br>
+      Type: {{job.audition.type}}
+      Date: {{job.audition.date}}  |  {{job.audition.loc}}<p></p>
+      <p></p>
+      <a href='/job/{{job._id}}'><button type="submit" class="btn btn-success">Find Out More</button></a>
+
+      <div ng-repeat="role in job.roles">
+        <!--Role preview-->
+        Role Description:<p></p>
+        Name:  {{role.charactername}}<br>
+        Type: {{role.type}}<br>
+        Gender:  {{role.gender}}<br>
+        Age range:  {{role.age.start}} to {{role.age.end}}<br>
+        Ethnicities:  {{role.ethnicity}}<br>
+        Description:  {{role.description}}<br>
+        Nudity yes/no  {{role.nudity}}<br>
+        Compensation: start   end  {{role.comp_min | currency}} to {{role.comp_max | currency}}<br>
+        Union: {{role.union}}
+        Notes: {{role.notes}}
+        Location: {{role.location}}
+      </div>
   </div>
 </div>
-    Display record results and filter for jobs/auditions
 
-<!--Filter form-->
-    FILTER FORM
-    <form>
-      Gender: <br>
-      <input type="checkbox" ng-model="gender" id="female"><label for="female">Female</label>
-      <input type="checkbox" ng-model="gender" id="male"><label for="female">Male</label>
-      <p></p>
-
-      Age:
-      <input type="range" ng-model="age" id="agerange" min="1" max="100">
-      <p></p>
-
-      Ethnicity:
-      <input type="checkbox" ng-model="ethnicity" id="female"><label for="female">Female</label>
-      <input type="checkbox" ng-model="ethnicity" id="male"><label for="female">Male</label>
-
-      Production Type:
-      <input type="checkbox" ng-model="ethnicity" id="female"><label for="female">Female</label>
-      <input type="checkbox" ng-model="ethnicity" id="male"><label for="female">Male</label>
-      <p></p>
-
-      Role Type:
-
-      Compensation
-
-      union
-      location
-      keywords
-
-      Rehearsal Date: <input type="date"><br>
-
-      Name of Production<br>
-      Production Description<br>
-      Production Type<br>
-      Rehearsal Date<br>
-      Rehearsal Location<br>
-      Production Date<br>
-      Production Location<br>
-      Audition Date<br>
-      Audition Location<br>
-      Audition Type: <input type="checkbox"> Online   <input type="checkbox"> Face-to-face
-      Role Description:
-      Name:
-      Type: lead, supporting, background
-      Gender:
-      Age range:
-      Ethnicities:
-      Description:
-      Nudity yes/no
-      Compensation: start   end
-      Union: yes/no
-      Notes: text
-      Seeking submission forms - specific city or nationwide
-    </form>
-
-
-    SHORT VIEW DISPLAY
-    Name of Production<br>
-    Production Description<br>
-    Production Type<br>
-    Rehearsal Date<br>
-    Rehearsal Location<br>
-    Production Date<br>
-    Production Location<br>
-    Audition Date<br>
-    Audition Location<br>
-    Audition Type: <input type="checkbox"> Online   <input type="checkbox"> Face-to-face
-    MORE DETAILS
-
-    LONG VIEW DISPLAY HAS ALL INFO
-
+</div>
 </div>
