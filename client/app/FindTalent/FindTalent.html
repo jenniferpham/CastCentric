@@ -1,6 +1,25 @@
-<div class="col-sm-4" ng-repeat='actor in actors'>
-<ul>
+
+<div class='container'>
+	<table>
+		<tr>
+			<th>Actors name</th>
+			<th>Gender</th>
+			<th>Ethnicity</th>
+		</tr>
+		<tr>
+			<td><input ng-model='name'></td>
+			<td><input ng-model='gender' type='checkbox' for='male'>male</td>
+			<td><input ng-model='ethnicity'></td>
+			<td><input ng-model='ageStart' type='text'></td>
+			<td><input ng-model='ageEnd' type='text'></td>
+		</tr>
+	</table>
+</div>
+<hr>
+<div class="nav nav nav-stacked col-md-4 col-md-6 col-sm-6" ng-repeat="actor in actors | filter:{Name:name, Ethnicity:ethnicty}">
+<div class=''
 <li><a href='/actors/{{actor.Name}}'><img class='picList' src='{{actor.ProfileImage}}'></a></li>
 <li>{{actor.Name}}</li>
-</ul>
+<li>{{actor.PhysicalAttribute.AgeRange.Start}}-{{actor.PhysicalAttribute.AgeRange.End}}</li>
+
 </div>
