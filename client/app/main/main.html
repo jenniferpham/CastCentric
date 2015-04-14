@@ -53,31 +53,37 @@
           </div>
     </div>
 
-   <div class="col-sm-4 " ng-controller="validFormCtrl">
+   <div class="col-sm-4 ">
             <!--FORM-->
             <!--pass in variable if our form is valid or not-->
-            <form name = userForm id="userForm" ng-submit="addNewUser(userForm.$valid)" novalidate>
+            <form name = userForm id="userForm" ng-submit="register(userForm)" ng-controller="SignupCtrl" novalidate>
               <!--form-header-->
               <h3>Join CastCentric Today!</h3>
               <p>See actor profiles and sign up for jobs and auditions for free!</p>
 
               <div class="form-group" ng-class="{'has-error': userForm.name.$invalid && !userForm.name.$pristine}">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" class="form-control" ng-model="name" required>
+                <input type="text" id="name" name="name" class="form-control" ng-model="user.name" required>
                 <!--validation: if you wrote in the textbox but then deleted it, then it'll say "your name is required"-->
                 <p ng-show="userForm.name.$invalid && !userForm.name.$pristine" class="help-block">Your name is required.</p>
               </div>
-              <div class="form-group" ng-class="{'has-error': userForm.email.$invalid && !userForm.email.$pristine}">
+              <div class="form-group" ng-class="{'has-success': userForm.email.$valid,'has-error': userForm.email.$invalid && !userForm.email.$pristine}">
                 <label for="email">Email</label>
-                <input name="email" type="email" id="email" class="form-control" ng-model="email" required>
-                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Your email is required</p>
+                <input name="email" type="email" id="email" class="form-control" ng-model="user.email" required mongoose-error>
+                <p ng-show="userForm.email.$invalid && !userForm.email.$pristine" class="help-block">Don't forget to type in a valid email address</p>
+                <!--tells us if email is already taken-->
+                <p class="help-block" ng-show="userForm.email.$error.mongoose">
+                  {{errors.email}}
+                </p>
               </div>
-              <div class="form-group" ng-class="{'has-error': userForm.password.$invalid && !userForm.password.$pristine}">
+
+              <div class="form-group" ng-class="{'has-success': userForm.password.$valid, 'has-error': userForm.password.$invalid && !userForm.password.$pristine}">
                 <label for="password">Password</label>
-                <input name="password" type="password" id="password" class="form-control" ng-model="password" ng-minlength="5" ng-maxlength="10" required>
+                <input name="password" type="password" id="password" class="form-control" ng-model="user.password" ng-minlength="5" ng-maxlength="10" required mongoose-error />
                 <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">Your password must be between 5 to 10 characters.</p>
               </div>
-              <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Submit</button>
+
+              <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Sign Up</button>
               <p><a href="/login">I'm already a member.<br>Sign into CastCentric now.</a></p>
             </form>
           </div>

@@ -1,42 +1,46 @@
 'use strict';
 
 var mongoose = require('mongoose'),
-    Schema = mongoose.Schema;
+  Schema = mongoose.Schema;
 
 var JobSchema = new Schema({
   production: {
     name: String,
     desc: String,
     type: String,
-    date: Date,
+    date: {
+      start: Date,
+      end: Date
+    },
     loc: String
   },
   audition: {
     type: String,
-    date: Date,
+    date: {
+      start: Date,
+      end: Date
+    },
     loc: String
   },
   rehearsal: {
-    date: Date,
+    date: {
+      start: Date,
+      end: Date
+    },
     loc: String
   },
-  role:{
+  roles:[{
     charactername: String,
     type: String,
     gender: String,
-    age: {
-      start: Number,
-      end: Number
-    },
+    age: Number,
     ethnicity: String,
     description: String,
     nudity: Boolean,
-    comp_min: Number,
-    comp_max: Number,
+    compensation:Boolean,
     union: Boolean,
-    notes: String,
-    location: String
-  },
+    notes: String
+  }],
   activepost: {
     start: Date,
     end: Date
