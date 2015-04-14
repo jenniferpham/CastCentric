@@ -8,7 +8,7 @@ var ActorSchema = new Schema({
 	Email: String,
 	ProfileImage: String,
 	Role: String,
-	'Location': String,
+	Location: String,
 	WorkHistory: {
 		Title: String,
 		RoleType: String,

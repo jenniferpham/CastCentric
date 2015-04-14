@@ -1,124 +1,65 @@
-'user strict';
+'use strict';
 
 var Job = require('../api/job/job.model.js');
 
 
 Job.find({}).remove(function(){
 	Job.create({
-      production:{
+      production: {
         name: 'Wicked',
-        desc: 'Renowned production that tells the other story from the witch\'s point of view and how she became the way she is',
-        type: 'broadway',
+        desc: 'tale told from the other side',
+        type: 'theater',
         date: {
-          start: 'Jan 4, 2016',
-          end: 'Feb 1, 2016'
+          start: 'June 1, 2016',
+          end: 'July 31, 2016'
         },
         loc: 'New York'
-    },
+      },
       audition: {
         type: 'face-to-face',
         date: {
-          start: 'May 4, 2015',
-          end: 'June 1, 2015'
+          start: 'June 1, 2015',
+          end: 'Aug 1, 2015'
         },
         loc: 'New York'
       },
       rehearsal: {
         date: {
-          start: 'Aug 4, 2015',
-          end: 'Dec 1, 2015'
+          start: 'Aug 15, 2015',
+          end: 'Nov 15, 2015'
         },
         loc: 'New York'
       },
-      role:{
-        'Glinda': {
+      roles:[
+        {
           charactername: 'Glinda',
           type: 'lead',
           gender: 'female',
-          age: {
-            start: 20,
-            end: 30
-          },
+          age: 25,
           ethnicity: 'Caucasian',
-          description: 'Glinda is the witch\'s roommate and rather self-centered.',
+          description: 'best friend of witch',
           nudity: false,
-          comp_min: 43000,
-          comp_max: 70000,
+          compensation:true,
           union: true,
-          notes: 'Director wants great work ethic in all from lead to supporting to extras',
-          location: 'New York'
+          notes: 'director wants someone hard working'
         },
-        'Witch': {
+        {
           charactername: 'Witch',
           type: 'lead',
           gender: 'female',
-          age: {
-            start: 20,
-            end: 30
-          },
+          age: 25,
           ethnicity: 'any',
-          description: 'witch is the witch\'s roommate and rather self-centered.',
+          description: 'best friend of witch',
           nudity: false,
-          comp_min: 43000,
-          comp_max: 70000,
+          compensation:true,
           union: true,
-          notes: 'Director wants great work ethic in all from lead to supporting to extras',
-          location: 'New York'
+          notes: 'director wants someone hard working'
         }
-      },
+      ],
       activepost: {
-        start: 'April 10, 2015',
-        end: 'June 4, 2015'
+        start: 'April 15, 2015',
+        end: 'May 15, 2015'
       }
-	},
-
-    {
-      production:{
-        name: 'Wicked',
-        desc: 'Renowned production that tells the other story from the witch\'s point of view and how she became the way she is',
-        type: 'broadway',
-        date: {
-          start: 'Jan 4, 2016',
-          end: 'Feb 1, 2016'
-        },
-        loc: 'New York'
-      },
-      audition: {
-        type: 'face-to-face',
-        date: {
-          start: 'May 4, 2015',
-          end: 'June 1, 2015'
-        },
-        loc: 'New York'
-      },
-      rehearsal: {
-        date: {
-          start: 'Aug 4, 2015',
-          end: 'Dec 1, 2015'
-        },
-        loc: 'New York'
-      },
-      role:{
-        charactername: 'Glinda',
-        type: 'lead',
-        gender: 'female',
-        age: {
-          start: 20,
-          end: 30
-        },
-        ethnicity: 'Caucasian',
-        description: 'Glinda is the witch\'s roommate and rather self-centered.',
-        nudity: false,
-        comp_min: 43000,
-        comp_max: 70000,
-        union: true,
-        notes: 'Director wants great work ethic in all from lead to supporting to extras',
-        location: 'New York'
-      },
-      activepost: {
-        start: 'April 10, 2015',
-        end: 'June 4, 2015'
-      }
-    }
-	)
+  }
+  )
 });

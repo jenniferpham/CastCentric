@@ -1,6 +1,6 @@
-'user strict';
+'use strict';
 
-var Actor = require('../api/actor/actor.model.js')
+var Actor = require('../api/actor/actor.model.js');
 
 
 Actor.find({}).remove(function(){
@@ -18,7 +18,7 @@ Actor.find({}).remove(function(){
 	},
 	PhysicalAttribute: {
 		Gender: 'Male',
-		AgeRange:{ 
+		AgeRange:{
 			Start: 24,
 		    End: 35
 		},
@@ -50,7 +50,7 @@ Actor.find({}).remove(function(){
 	},
 	PhysicalAttribute: {
 		Gender: 'Female',
-		AgeRange:{ 
+		AgeRange:{
 			Start: 24,
 		    End: 35
 		},
@@ -83,7 +83,7 @@ Actor.find({}).remove(function(){
 	},
 	PhysicalAttribute: {
 		Gender: 'Female',
-		AgeRange:{ 
+		AgeRange:{
 			Start: 24,
 		    End: 35
 		},
