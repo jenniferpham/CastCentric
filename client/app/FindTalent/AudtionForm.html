@@ -18,38 +18,36 @@
           <option value="Video">Video</option>
           <option value="Commercial">Commercial</option>
         </select><br>
-      </form>
+
 
     <h2>Audition information</h2>
-    <form>
+
       Date: <input type="date"><br>
       Location: <input type="text" ng-model="audLocation" placeholder="Location"><br>
       Audition type: <input type="checkbox" name="Online" value="Online" ng-model="audOnline">Online
                      <input type="checkbox" name="In person" value="InPerson" ng-model="audInperson">In Person
       <br>
-    </form>
+
 
     <h2>Role information</h2>
-    <form>
-        Name: <input type="text" ng-model="roleName" placeholder="roleName"><br>
+
+        Name: <input type="text" ng-model="roleName" placeholder="Character Name"><br>
         Type: <input type="text" ng-model="roleType" placeholder="Type of role"><br>
         Gender: <input type="checkbox" name="Male" value="Male" ng-model="roleMale">Male
                 <input type="checkbox" name="Female" value="female" ng-model="roleFemale">Female <br>
-        Ethnicity: <input type="text" ng-model="roleEthnicities" placeholder="Enter preferred ethnicity for this role. Separate by commas if more than one."><br>
+        Ethnicity: <input type="text" ng-model="roleEthnicity" placeholder="Enter preferred ethnicity for this role. Separate by commas if more than one."><br>
         Description: <input type="text" ng-model="roleDesc" placeholder="Briefly describe the role"><br>
         Nudity: <select name="Nudity">
                   <option value="Yes">Yes</option>
                   <option value="No">No</option>
                 </select><br>
-    </form>
 
-    <form>
-      Compensation: <input type="text" ng-model="roleComp" placeholder="Compensation or other benefits"><br>
-      Union: <select name="Union">
+        Compensation: <input type="text" ng-model="roleComp" placeholder="Compensation or other benefits"><br>
+        Union: <select name="Union">
                      <option value="Yes">Yes</option>
                      <option value="No">No</option>
-             </select><br>
-      Notes: <input type="text" ng-model="roleNotes" placeholder="Enter any additional notes or requirements for this role."
+                </select><br>
+        Notes: <input type="text" ng-model="roleNotes" placeholder="Enter any additional notes or requirements for this role.">
     </form>
 
 
