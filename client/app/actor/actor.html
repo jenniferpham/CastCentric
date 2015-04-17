@@ -47,5 +47,28 @@
 						<br>
 							<strong>Gender</strong>:{{actor.PhysicalAttribute.Gender}}, <strong>Height</strong>:{{actor.PhysicalAttribute.Height}}, <strong>Build</strong>:{{actor.PhysicalAttribute.Build}}, <strong>Eye Color</strong>: {{actor.PhysicalAttribute.Eyes}}, <strong>Hair</strong>: {{actor.PhysicalAttribute.Hair}}
 				</div>
+				<div class='col-lg-6'>
+					<h2> 
+						Roles
+					 </h2>
+					 	<table style='width:100%'>
+						 	<thead>
+						 		<tr valign='top'>
+						 			<th>Title</th>
+						 			<th>Role Type</th>
+						 			<th>Director</th>
+						 			<th>Comapny</th>
+						 		</tr>
+						 	</thead>
+						 	<tbody>
+						 		<tr>
+						 			<td>{{actor.WorkHistory.Title}}</td>
+						 			<td>{{actor.WorkHistory.RoleType}}</td>
+						 			<td>{{actor.WorkHistory.Director}}</td>
+						 			<td>{{actor.WorkHistory.Company}}</td>	
+						 		</tr>
+						 	</tbody>
+					 	</table>
+				</div>
 			</div>
 </div>

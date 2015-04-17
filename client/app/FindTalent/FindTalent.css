@@ -1,0 +1,11 @@
+.header{
+	padding:12px 12px;
+	background:black;
+}
+.picList {
+   width: 160px;
+  height: 180px;
+}
+.listBorder{
+	border:dotted;
+}
