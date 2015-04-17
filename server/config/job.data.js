@@ -65,4 +65,5 @@ Job.find({}).remove(function(){
       }
     }
   )
+
 });
