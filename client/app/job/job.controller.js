@@ -10,4 +10,26 @@ angular.module('castCentricApp')
         return selectedJobPost.id === $routeParams._id  //_id because mongo lab automatically creates _id key
       })
     })
-  });
+  })
+  .filter('sayYesNo', function(){
+    return function(data){
+      return data ? 'yes':'no'
+      /*var answer = {};
+      if (data===true){
+        answer = "yes"
+      }else if (data===false){
+        answer = "no"
+      }
+      return answer;*/
+    }
+  })
+  .filter('unionStatus', function(){
+    return function(data){
+      return data ? 'union':'non-union'
+    }
+  })
+  .filter('compStatus', function(){
+    return function(data){
+      return data ? 'paid': 'unpaid'
+    }
+  })

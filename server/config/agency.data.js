@@ -1,4 +1,4 @@
-'user strict';
+'use strict';
 
 var Agency = require('../api/agency/agency.model.js')
 

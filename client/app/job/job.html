@@ -1,38 +1,41 @@
-<div class="col-md-12">
-<div ng-repeat="job in jobs">
-  <!--Detailed job page-->
-  <h3>{{job.production.name}}</h3><br>
-  <!--| filter:{productionname: filter_productionname, productiondesc: filter_productiondesc}-->
-  {{job.production.desc}}<br>
-  Type: {{job.production.type}}<br>
 
-  <strong>Rehearsal:</strong><br>
-  Date: {{job.rehearsal.date}}  |  {{job.rehearsal.loc}}<br>
-  Audition:<br>
-  Date: {{job.audition.date}}  |  {{job.audition.loc}}<br>
-  Production:<br>
-  Date: {{job.production.date}}  |  {{job.production.loc}}<br>
-  <br>
-  Audition Type: {{job.audition.type}}
+ <div class="container">
+      <!--Diplay preview of jobs in job database from server-->
+      <div ng-repeat="job in jobs">
+        <!--anything I put after the custom filter will be the 2nd paramter. 1st parameter is automatically jobs or what is being filtered-->
+        <h2>{{job.production.name}}</h2>
+        {{job.production.desc}}<br>
+        <strong>Production Type:</strong> {{job.production.typee}}<br>
+        <strong>Production Company:</strong> {{job.production.company}}<br>
+        <p></p>
 
-  <div ng-repeat="role in job.roles">
-    <!--Role preview-->
-    Role Description:
-    Name:  {{role.charactername}}<br>
-    Type: {{role.type}}<br>
-    Gender:  {{role.gender}}<br>
-    Age range:  {{role.age.start}} to {{role.age.end}}<br>
-    Ethnicities:  {{role.ethnicity}}<br>
-    Description:  {{role.description}}<br>
-    <button type="submit" ng-click="seemore=true" ng-hide="seemore">See More Details</button>
-    <button type="submit" ng-click="seemore=false" ng-show="seemore">Close Details</button>
-    <div ng-show="seemore">
-      Nudity yes/no  {{role.nudity}}<br>
-      Compensation: start   end  {{role.comp_min | currency}} to {{role.comp_max | currency}}<br>
-      Union: {{role.union}}
-      Notes: {{role.notes}}
-      Location: {{role.location}}
-    </div>
+        <strong>Production:</strong><br>
+        Date: {{job.production.date.start | date: "MMMM dd, yyyy"}} to {{job.production.date.end | date: "MMMM dd, yyyy"}}<br>
+        Location: {{job.production.loc}}
+        <p></p>
+
+        <strong>Rehearsal:</strong><br>
+        Date: {{job.rehearsal.date.start| date: "MMMM dd, yyyy"}} to {{job.rehearsal.date.end | date: "MMMM dd, yyyy"}}<br>
+        Location: {{job.rehearsal.loc}}<p></p>
+
+        <!--Display roles in full-->
+        <p></p>
+        <h3>Roles Available</h3>
+        <div class="container">
+          <div ng-repeat="role in job.roles">
+            <!--Role preview-->
+            <h4>{{role.charactername}}</h4>
+            {{role.typee}} role - {{role.gender}}, age {{role.age}}, {{role.ethnicity}}<p></p>
+            {{role.description}}<br>
+            Nudity:  {{role.nudity | sayYesNo}}<br>
+            Compensation: {{role.compensation | compStatus}}<br>
+            Union: {{role.union | unionStatus}}<br>
+            Notes: {{role.notes}}<br>
+            Location: {{role.location}}<br>
+            <strong>Audition:</strong> {{role.audition.typee}} audition from {{role.audition.date.start | date: "MMMM dd, yyyy"}} to {{role.audition.date.end | date: "MMMM dd, yyyy"}} in {{role.audition.loc}}<p></p>
+            <p></p>
+          </div>
+        </div>
+
   </div>
-</div>
 </div>

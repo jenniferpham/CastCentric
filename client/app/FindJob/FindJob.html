@@ -4,15 +4,18 @@
 
     <div class="col-md-3">
       <!--Filter form-->
-      FILTER FORM
-      <form>
+
+      <form name="filterJobs" id="filterJobs">
+        <strong>Find the jobs that are perfect for you!</strong><p></p>
         Gender: <br>
-        <input type="checkbox" ng-model="search.roles.gender.female" id="female" value="female"> Female
-        <input type="checkbox" ng-model="search.roles.gender.male" id="male" value="male"> Male
+        <input type="button" id="female" value="female" ng-click="search.roles.gender = 'female'"> Female
+        <input type="button" id="male" value="male" ng-click="search.roles.gender = 'male'"> Male
         <p></p>
 
-        Age:
-        <input type="range" ng-model="search.roles.age" id="agerange" min="1" max="100">
+        Age:<br>
+        Age Min: <input type="number" ng-model="search.roles.age.min"><br>
+        Age Max: <input type="number" ng-model="search.roles.age.max">
+        <!--<input type="range" ng-model="search.roles.age" id="agerange" min="1" max="100">-->
         <p></p>
 
         Ethnicity:<br>
@@ -63,46 +66,34 @@
         <input type="text" ng-model="search.$">
       </form>
    </div>
-  <div class="col-md-8">
+  <div class="col-md-9">
     <!--Diplay preview of jobs in job database from server-->
-    <div class="container" ng-repeat="job in jobs | filter: search">
+    <div ng-repeat="job in jobs | jobFilter: search">
+      <!--anything I put after the custom filter will be the 2nd paramter. 1st parameter is automatically jobs or what is being filtered-->
       <h2>{{job.production.name}}</h2>
     <!--ng-repeat="job in filteredJobs = (jobs | filter:{role.rehearsal.loc: location}) OR | filter: search-->
         <!--<h3>{{job.production.name}}</h3><br>-->
       <!--| filter:{productionname: filter_productionname, productiondesc: filter_productiondesc}-->
-        {{job.production.desc}}<br>
-      Type: {{job.production.typee}}<br>
-      Date: {{job.production.date.start}} to {{job.production.date.end}}<br>
-      Location: {{job.production.loc}}<p></p>
-      <strong>Rehearsal:</strong><br>
-      Date: {{job.rehearsal.date.start}} to {{job.rehearsal.date.end}}<br>
-      Location: {{job.rehearsal.loc}}<p></p>
-      <strong>Audition:</strong><br>
-      Type: {{job.audition.typee}}<br>
-      Date: {{job.audition.date.start}} to {{job.audition.date.end}}<br>
-      Location: {{job.audition.loc}}<p></p>
+        {{job.production.desc | limitTo:500}}{{job.production.desc.length > 500 ? '...' : ''}}<br>
+      <strong>Production Type:</strong> {{job.production.typee}}<br>
+      <strong>Date:</strong> {{job.production.date.start | date: "MMMM dd, yyyy"}} to {{job.production.date.end | date: "MMMM dd, yyyy"}}<br>
+      <strong>Location:</strong> {{job.production.loc}}<p></p>
       <p></p>
       <a href='/job/{{job._id}}'><button type="submit" class="btn btn-success">Find Out More</button></a>
       <p></p>
-      <h3>Roles Available</h4>
-      <div class="container">
-        <div ng-repeat="role in job.roles">
+      <h3>Roles Available</h3>
+
+        <div ng-repeat="role in job.roles" class="moveover">
           <!--Role preview-->
           <h4>{{role.charactername}}</h4>
-          Type: {{role.typee}}<br>
-          Gender:  {{role.gender}}<br>
-          Age range:  {{role.age.start}} to {{role.age.end}}<br>
-          Ethnicity:  {{role.ethnicity}}<br>
-          Description:  {{role.description}}<br>
-          Nudity yes/no  {{role.nudity}}<br>
-          Compensation: {{role.compensation}}<br>
-          Union: {{role.union}}<br>
-          Notes: {{role.notes}}<br>
-          Location: {{role.location}}
+          <em>{{role.typee}} role, {{role.gender}}, Age {{role.age}}, {{role.ethnicity}}</em><br>
+          {{role.description | limitTo:200}}{{role.description.length > 200 ? '...' : ''}}<br>
           <p></p>
+
         </div>
-      </div>
+      <hr>
   </div>
+
 </div>
 
 </div>

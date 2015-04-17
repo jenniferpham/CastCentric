@@ -9,15 +9,8 @@ var mongoose = require('mongoose'),
 var JobSchema = new Schema({
   production: {
     name: String,
+    company: String,
     desc: String,
-    typee: String,
-    date: {
-      start: Date,
-      end: Date
-    },
-    loc: String
-  },
-  audition: {
     typee: String,
     date: {
       start: Date,
@@ -42,7 +35,15 @@ var JobSchema = new Schema({
     nudity: Boolean,
     compensation:Boolean,
     union: Boolean,
-    notes: String
+    notes: String,
+    audition: {
+      typee: String,
+      date: {
+        start: Date,
+        end: Date
+      },
+      loc: String
+    }
   }],
   activepost: {
     start: Date,
