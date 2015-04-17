@@ -1,3 +1,6 @@
+/**
+ * Created by Jennifer on 4/16/2015.
+ */
 'use strict';
 
 var mongoose = require('mongoose'),
@@ -7,7 +10,7 @@ var JobSchema = new Schema({
   production: {
     name: String,
     desc: String,
-    type: String,
+    typee: String,
     date: {
       start: Date,
       end: Date
@@ -15,7 +18,7 @@ var JobSchema = new Schema({
     loc: String
   },
   audition: {
-    type: String,
+    typee: String,
     date: {
       start: Date,
       end: Date
@@ -31,7 +34,7 @@ var JobSchema = new Schema({
   },
   roles:[{
     charactername: String,
-    type: String,
+    typee: String,
     gender: String,
     age: Number,
     ethnicity: String,

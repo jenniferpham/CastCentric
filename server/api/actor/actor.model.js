@@ -17,7 +17,7 @@ var ActorSchema = new Schema({
 	},
 	PhysicalAttribute: {
 		Gender: String,
-		String:{
+		AgeRange:{ 
 			Start: Number,
 			 End: Number
 		},

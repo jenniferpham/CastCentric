@@ -16,29 +16,29 @@
         <p></p>
 
         Ethnicity:<br>
-        <input type="checkbox" ng-model="ethnicity" id="caucasian"> Caucasian<br>
-        <input type="checkbox" ng-model="ethnicity" id="africanamer"> African American<br>
-        <input type="checkbox" ng-model="ethnicity" id="hispanic"> Hispanic<br>
-        <input type="checkbox" ng-model="ethnicity" id="asian"> Asian<br>
-        <input type="checkbox" ng-model="ethnicity" id="southasian"> South Asian<br>
-        <input type="checkbox" ng-model="ethnicity" id="nativeamer"> Native American<br>
-        <input type="checkbox" ng-model="ethnicity" id="middleeastern"> Middle Eastern<br>
-        <input type="checkbox" ng-model="ethnicity" id="seapi"> Southeast Asian / Pacific Islander<br>
-        <input type="checkbox" ng-model="ethnicity" id="mixed"> Ethnically Ambiguous / Mixed Race<br>
-        <input type="checkbox" ng-model="ethnicity" id="african"> African Descent
+        <input type="checkbox" ng-model="search.roles.ethnicity.caucasian" id="caucasian"> Caucasian<br>
+        <input type="checkbox" ng-model="search.roles.ethnicity.africanamer" id="africanamer"> African American<br>
+        <input type="checkbox" ng-model="search.roles.ethnicity.hispanic" id="hispanic"> Hispanic<br>
+        <input type="checkbox" ng-model="search.roles.ethnicity.asian" id="asian"> Asian<br>
+        <input type="checkbox" ng-model="search.roles.ethnicity.southasian" id="southasian"> South Asian<br>
+        <input type="checkbox" ng-model="search.roles.ethnicity.nativeamer" id="nativeamer"> Native American<br>
+        <input type="checkbox" ng-model="search.roles.ethnicity.middleeastern" id="middleeastern"> Middle Eastern<br>
+        <input type="checkbox" ng-model="search.roles.ethnicity.seapi" id="seapi"> Southeast Asian / Pacific Islander<br>
+        <input type="checkbox" ng-model="search.roles.ethnicity.mixed" id="mixed"> Ethnically Ambiguous / Mixed Race<br>
+        <input type="checkbox" ng-model="search.roles.ethnicity.african" id="african"> African Descent
         <p></p>
 
         Production Type:<br>
-        <input type="checkbox" ng-model="productiontype" value="theater"> Theater/Play<br>
-        <input type="checkbox" ng-model="productiontype" value="movie"> Movie<br>
-        <input type="checkbox" ng-model="productiontype" value="tv"> TV Show<br>
-        <input type="checkbox" ng-model="productiontype" value="commercial"> Commercial
+        <input type="checkbox" ng-model="search.production.typee.theater" value="theater"> Theater/Play<br>
+        <input type="checkbox" ng-model="search.production.typee.movie" value="movie"> Movie<br>
+        <input type="checkbox" ng-model="search.production.typee.tv" value="tv"> TV Show<br>
+        <input type="checkbox" ng-model="search.production.typee.commercial" value="commercial"> Commercial
         <p></p>
 
         Role Type:<br>
-        <input type="checkbox" ng-model="roletype" value="lead"> Lead Role<br>
-        <input type="checkbox" ng-model="roletype" value="supporting"> Supporting Role<br>
-        <input type="checkbox" ng-model="roletype" value="extra"> Extra / Background Role<br>
+        <input type="checkbox" ng-model="search.role.typee.lead" value="lead"> Lead Role<br>
+        <input type="checkbox" ng-model="search.role.typee.supporting" value="supporting"> Supporting Role<br>
+        <input type="checkbox" ng-model="search.role.typee.extra" value="extra"> Extra / Background Role<br>
         <p></p>
 
         Compensation (per $__/mo)?<br>
@@ -66,34 +66,41 @@
   <div class="col-md-8">
     <!--Diplay preview of jobs in job database from server-->
     <div class="container" ng-repeat="job in jobs | filter: search">
+      <h2>{{job.production.name}}</h2>
     <!--ng-repeat="job in filteredJobs = (jobs | filter:{role.rehearsal.loc: location}) OR | filter: search-->
         <!--<h3>{{job.production.name}}</h3><br>-->
       <!--| filter:{productionname: filter_productionname, productiondesc: filter_productiondesc}-->
         {{job.production.desc}}<br>
-      Type: {{job.production.type}}<br>
-      Date: {{job.production.date}}  |  {{job.production.loc}}<p></p>
+      Type: {{job.production.typee}}<br>
+      Date: {{job.production.date.start}} to {{job.production.date.end}}<br>
+      Location: {{job.production.loc}}<p></p>
       <strong>Rehearsal:</strong><br>
-      Date: {{job.rehearsal.date.start}} to {{job.rehearsal.date.end}}  |  {{job.rehearsal.loc}}<p></p>
+      Date: {{job.rehearsal.date.start}} to {{job.rehearsal.date.end}}<br>
+      Location: {{job.rehearsal.loc}}<p></p>
       <strong>Audition:</strong><br>
-      Type: {{job.audition.type}}
-      Date: {{job.audition.date}}  |  {{job.audition.loc}}<p></p>
+      Type: {{job.audition.typee}}<br>
+      Date: {{job.audition.date.start}} to {{job.audition.date.end}}<br>
+      Location: {{job.audition.loc}}<p></p>
       <p></p>
       <a href='/job/{{job._id}}'><button type="submit" class="btn btn-success">Find Out More</button></a>
-
-      <div ng-repeat="role in job.roles">
-        <!--Role preview-->
-        Role Description:<p></p>
-        Name:  {{role.charactername}}<br>
-        Type: {{role.type}}<br>
-        Gender:  {{role.gender}}<br>
-        Age range:  {{role.age.start}} to {{role.age.end}}<br>
-        Ethnicities:  {{role.ethnicity}}<br>
-        Description:  {{role.description}}<br>
-        Nudity yes/no  {{role.nudity}}<br>
-        Compensation: start   end  {{role.comp_min | currency}} to {{role.comp_max | currency}}<br>
-        Union: {{role.union}}
-        Notes: {{role.notes}}
-        Location: {{role.location}}
+      <p></p>
+      <h3>Roles Available</h4>
+      <div class="container">
+        <div ng-repeat="role in job.roles">
+          <!--Role preview-->
+          <h4>{{role.charactername}}</h4>
+          Type: {{role.typee}}<br>
+          Gender:  {{role.gender}}<br>
+          Age range:  {{role.age.start}} to {{role.age.end}}<br>
+          Ethnicity:  {{role.ethnicity}}<br>
+          Description:  {{role.description}}<br>
+          Nudity yes/no  {{role.nudity}}<br>
+          Compensation: {{role.compensation}}<br>
+          Union: {{role.union}}<br>
+          Notes: {{role.notes}}<br>
+          Location: {{role.location}}
+          <p></p>
+        </div>
       </div>
   </div>
 </div>
