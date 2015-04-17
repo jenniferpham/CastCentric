@@ -14,6 +14,10 @@ angular.module('castCentricApp')
           email: $scope.user.email,
           password: $scope.user.password
         })
+          .then(function(){
+            $scope.userForm.$setPristine();  //set pristine so error messages don't all pop up
+            $scope.user = {}; // make form blank after login
+          })
         .then( function() {
           // Account created, redirect to home
           $location.path('/');

@@ -1,14 +1,17 @@
+/**
+ * Created by Jennifer on 4/16/2015.
+ */
 'use strict';
 
 var Job = require('../api/job/job.model.js');
 
 
 Job.find({}).remove(function(){
-	Job.create({
+  Job.create({
       production: {
         name: 'Wicked',
         desc: 'tale told from the other side',
-        type: 'theater',
+        typee: 'theater',
         date: {
           start: 'June 1, 2016',
           end: 'July 31, 2016'
@@ -16,7 +19,7 @@ Job.find({}).remove(function(){
         loc: 'New York'
       },
       audition: {
-        type: 'face-to-face',
+        typee: 'face-to-face',
         date: {
           start: 'June 1, 2015',
           end: 'Aug 1, 2015'
@@ -33,7 +36,7 @@ Job.find({}).remove(function(){
       roles:[
         {
           charactername: 'Glinda',
-          type: 'lead',
+          typee: 'lead',
           gender: 'female',
           age: 25,
           ethnicity: 'Caucasian',
@@ -45,11 +48,11 @@ Job.find({}).remove(function(){
         },
         {
           charactername: 'Witch',
-          type: 'lead',
+          typee: 'lead',
           gender: 'female',
           age: 25,
           ethnicity: 'any',
-          description: 'best friend of witch',
+          description: 'sweet girl that is misunderstood because of her green appearance',
           nudity: false,
           compensation:true,
           union: true,
@@ -60,6 +63,6 @@ Job.find({}).remove(function(){
         start: 'April 15, 2015',
         end: 'May 15, 2015'
       }
-  }
+    }
   )
 });
