@@ -3,7 +3,7 @@
 angular.module('castCentricApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/actors/:Name', {
+      .when('/actors/:_id', {
         templateUrl: 'app/actor/actor.html',
         controller: 'ActorCtrl'
       });

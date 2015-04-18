@@ -1,25 +1,56 @@
 
 <div class='container'>
-	<table>
-		<tr>
-			<th>Actors name</th>
-			<th>Gender</th>
-			<th>Ethnicity</th>
-		</tr>
-		<tr>
-			<td><input ng-model='name'></td>
-			<td><input ng-model='gender' type='checkbox' for='male'>male</td>
-			<td><input ng-model='ethnicity'></td>
-			<td><input ng-model='ageStart' type='text'></td>
-			<td><input ng-model='ageEnd' type='text'></td>
-		</tr>
-	</table>
-</div>
-<hr>
-<div class="nav nav nav-stacked col-md-4 col-md-6 col-sm-6" ng-repeat="actor in actors | filter:{Name:name}">
-<div class=''
-<li><a href='/actors/{{actor.Name}}'><img class='picList' src='{{actor.ProfileImage}}'></a></li>
-<li>{{actor.Name}}</li>
-<li>{{actor.PhysicalAttribute.AgeRange.Start}}-{{actor.PhysicalAttribute.AgeRange.End}}</li>
+	<div class='row'>
+		<div class='col-md-9 listBorder'>
+			<hr>
+		<div class="nav nav-stacked col-xs-3" ng-repeat="actor in actors | filter: search">
+			<div class='header'></div>
+				<li><a href='/actors/{{actor._id}}'><img class='picList' src='{{actor.ProfileImage}}'></a></li>
+				<li>{{actor.Name}}</li>
+				<li>{{actor.PhysicalAttribute.AgeRange.Start}}-{{actor.PhysicalAttribute.AgeRange.End}}</li>
+			</div>
 
+	</div>
+	<div class='col-md-3 listBorder'>
+			<form>
+				Gender: <br>
+		        <input type="checkbox" ng-model="search.PhysicalAttribute.Gender.female" id="female" value="female"> Female
+		        <input type="checkbox" ng-model="search.PhysicalAttribute.Gender.male" id="male" value="male"> Male
+		        <p></p>
+
+		        Age:
+		        <input type="range" ng-model="search.PhysicalAttribute.AgeRange" id="agerange" min="1" max="100">
+		        <p></p>
+		        Ethnicity:<br>
+		        <input type="checkbox" ng-model="ethnicity" id="caucasian"> Caucasian<br>
+		        <input type="checkbox" ng-model="ethnicity" id="africanamer"> African American<br>
+		        <input type="checkbox" ng-model="ethnicity" id="hispanic"> Hispanic<br>
+		        <input type="checkbox" ng-model="ethnicity" id="asian"> Asian<br>
+		        <input type="checkbox" ng-model="ethnicity" id="southasian"> South Asian<br>
+		        <input type="checkbox" ng-model="ethnicity" id="nativeamer"> Native American<br>
+		        <input type="checkbox" ng-model="ethnicity" id="middleeastern"> Middle Eastern<br>
+		        <input type="checkbox" ng-model="ethnicity" id="seapi"> Southeast Asian / Pacific Islander<br>
+		        <input type="checkbox" ng-model="ethnicity" id="mixed"> Ethnically Ambiguous / Mixed Race<br>
+		        <input type="checkbox" ng-model="ethnicity" id="african"> African Descent
+		        <p></p>
+
+		        Role Type:<br>
+		        <input type="checkbox" ng-model="roletype" value="lead"> Lead Role<br>
+		        <input type="checkbox" ng-model="roletype" value="supporting"> Supporting Role<br>
+		        <input type="checkbox" ng-model="roletype" value="extra"> Extra / Background Role<br>
+		        <p></p>
+
+			    Location:
+		        <select ng-model="search.Location">
+		          <option value="New York">New York, NY</option>
+		          <option value="Los Angeles">Los Angeles, CA</option>
+		          <option value="San Francisco">San Francisco, CA</option>
+		          <option value="Chicago">Chicago, Il</option>
+		        </select>
+		        <p></p>
+		        Keywords:
+        		<input type="text" ng-model="search.$">
+
+			</form>
+		</div>
 </div>

@@ -3,19 +3,16 @@
 	height:400px;
 }
 
-.contactMe{
-  background:#db1e24;
-  height: 37px;
-  line-height: 37px;
-  width: 115px;
-  color: #fff;
-  font-family: NGBoldCon,Arial,Helvetica,sans-serif;
-  display: block;
-  font-size: 22px;
+.workListing, table, th{
+  color: #db1e24;
+  font-size: 12px;
   text-transform: uppercase;
-  padding-left: 50px;
-  cursor: pointer;
+  height: 35px;
+  border-bottom: 1px dotted #999;
+  text-align: left;
+  width:140px;
 }
-.mail{
-	background:top-left;
+
+td{
+	color:black;
 }
