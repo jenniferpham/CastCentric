@@ -79,17 +79,31 @@
       <strong>Date:</strong> {{job.production.date.start | date: "MMMM dd, yyyy"}} to {{job.production.date.end | date: "MMMM dd, yyyy"}}<br>
       <strong>Location:</strong> {{job.production.loc}}<p></p>
       <p></p>
-      <a href='/job/{{job._id}}'><button type="submit" class="btn btn-success">Find Out More</button></a>
+      <a href='/jobs/{{job._id}}'><button type="submit" class="btn btn-success">Find Out More</button></a>
       <p></p>
       <h3>Roles Available</h3>
+        <div ng-repeat="role in job.roles" class="roleBox row">
+          <div class="col-md-10">
+            <!--Role preview-->
+            <span class="bigger">{{role.charactername}}</span> |
+            <strong>{{role.typee}} role - {{role.gender}}, Age {{role.age}}, {{role.ethnicity}}</strong><p></p>
+            <div ng-hide="restOfRole">{{role.description | limitTo: 250}}{{role.description.length > 250 ? '...':''}}<p></p></div>
 
-        <div ng-repeat="role in job.roles" class="moveover">
-          <!--Role preview-->
-          <h4>{{role.charactername}}</h4>
-          <em>{{role.typee}} role, {{role.gender}}, Age {{role.age}}, {{role.ethnicity}}</em><br>
-          {{role.description | limitTo:200}}{{role.description.length > 200 ? '...' : ''}}<br>
-          <p></p>
+            <div ng-show="restOfRole">
+              {{role.description}}<p></p>
+              <strong>Audition:</strong> {{role.audition.typee}} audition from {{role.audition.date.start | date: "MMMM dd, yyyy"}} to {{role.audition.date.end | date: "MMMM dd, yyyy"}} in {{role.audition.loc}}<br>
+              <strong>Compensation:</strong> {{role.compensation | compStatus}}<br>
+              <strong>Union:</strong> {{role.union | unionStatus}}<br>
+              <strong>Nudity:</strong>  {{role.nudity | sayYesNo}}<br>
+              <strong>Director Notes:</strong> {{role.notes}}
+            </div>
+            <button type="button" class="btn btn-primary btn-sm" ng-click="restOfRole=true" ng-hide="restOfRole">See More Details</button>
+            <button type="button" class="btn btn-primary btn-sm" ng-show="restOfRole" ng-click="restOfRole=false">Close Details</button>
 
+          </div>
+          <div class="col-md-2 middleplease">
+            <a href=""><button type="submit" class="btn hoverbtn btn-danger">Apply Now</button></a>
+          </div>
         </div>
       <hr>
   </div>

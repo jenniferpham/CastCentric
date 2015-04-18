@@ -4,9 +4,8 @@
       <div ng-repeat="job in jobs">
         <!--anything I put after the custom filter will be the 2nd paramter. 1st parameter is automatically jobs or what is being filtered-->
         <h2>{{job.production.name}}</h2>
-        {{job.production.desc}}<br>
-        <strong>Production Type:</strong> {{job.production.typee}}<br>
-        <strong>Production Company:</strong> {{job.production.company}}<br>
+        <em>{{job.production.typee}} from {{job.production.company}}</em><br>
+        {{job.production.desc}}
         <p></p>
 
         <strong>Production:</strong><br>
@@ -22,18 +21,20 @@
         <p></p>
         <h3>Roles Available</h3>
         <div class="container">
-          <div ng-repeat="role in job.roles">
-            <!--Role preview-->
-            <h4>{{role.charactername}}</h4>
-            {{role.typee}} role - {{role.gender}}, age {{role.age}}, {{role.ethnicity}}<p></p>
-            {{role.description}}<br>
-            Nudity:  {{role.nudity | sayYesNo}}<br>
-            Compensation: {{role.compensation | compStatus}}<br>
-            Union: {{role.union | unionStatus}}<br>
-            Notes: {{role.notes}}<br>
-            Location: {{role.location}}<br>
-            <strong>Audition:</strong> {{role.audition.typee}} audition from {{role.audition.date.start | date: "MMMM dd, yyyy"}} to {{role.audition.date.end | date: "MMMM dd, yyyy"}} in {{role.audition.loc}}<p></p>
-            <p></p>
+          <div ng-repeat="role in job.roles" class="roleBox row">
+            <div class="col-md-10">
+                <!--Role preview-->
+              <span class="bigger">{{role.charactername}}</span> |
+              <strong>{{role.typee}} role - {{role.gender}}, Age {{role.age}}, {{role.ethnicity}}</strong><p></p>
+              {{role.description}}<p></p>
+              <strong>Audition:</strong> {{role.audition.typee}} audition from {{role.audition.date.start | date: "MMMM dd, yyyy"}} to {{role.audition.date.end | date: "MMMM dd, yyyy"}} in {{role.audition.loc}}<br>
+              <strong>Compensation:</strong> {{role.compensation | compStatus}}<br>
+              <strong>Union:</strong> {{role.union | unionStatus}}<br>
+              <strong>Nudity:</strong>  {{role.nudity | sayYesNo}}<br>
+              <strong>Director Notes:</strong> {{role.notes}}
+          </div>
+          <div class="col-md-2 middleplease">
+            <a href=""><button type="submit" class="btn btn-danger">Apply Now</button></a>
           </div>
         </div>
 

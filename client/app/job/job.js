@@ -3,7 +3,7 @@
 angular.module('castCentricApp')
   .config(function ($routeProvider) {
     $routeProvider
-      .when('/job/:id', {
+      .when('/jobs/:id', {
         templateUrl: 'app/job/job.html',
         controller: 'JobCtrl'
       });
