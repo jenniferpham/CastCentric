@@ -1,25 +1,56 @@
 
 <div class='container'>
-	<table>
-		<tr>
-			<th>Actors name</th>
-			<th>Gender</th>
-			<th>Ethnicity</th>
-		</tr>
-		<tr>
-			<td><input ng-model='name'></td>
-			<td><input ng-model='gender' type='checkbox' for='male'>male</td>
-			<td><input ng-model='ethnicity'></td>
-			<td><input ng-model='ageStart' type='text'></td>
-			<td><input ng-model='ageEnd' type='text'></td>
-		</tr>
-	</table>
-</div>
-<hr>
-<div class="nav nav nav-stacked col-md-4 col-md-6 col-sm-6" ng-repeat="actor in actors | filter:{Name:name}">
-<div class=''
-<li><a href='/actors/{{actor.Name}}'><img class='picList' src='{{actor.ProfileImage}}'></a></li>
-<li>{{actor.Name}}</li>
-<li>{{actor.PhysicalAttribute.AgeRange.Start}}-{{actor.PhysicalAttribute.AgeRange.End}}</li>
+	<div class='row'>
+		<div class='col-md-9 listBorder'>
+			<hr>
+		<div class="nav nav-stacked col-xs-3" ng-repeat="actor in actors | filter: search">
+			<div class='header'></div>
+				<li><a href='/actors/{{actor._id}}'><img class='picList' src='{{actor.ProfileImage}}'></a></li>
+				<li>{{actor.Name}}</li>
+				<li>{{actor.PhysicalAttribute.AgeRange.Start}}-{{actor.PhysicalAttribute.AgeRange.End}}</li>
+			</div>
 
+	</div>
+	<!-- Filters -->
+	<div class='col-md-3 listBorder' ng-init='hideFilters=true'>
+		<div class='container'>
+			<button class='btn btn-sm btn-danger'ng-show='hideFilters'ng-click='hideFilters=false'>Advance Filters</button>
+			<button class='btn btn-sm btn-danger' ng-hide='hideFilters'ng-click='hideFilters=true'>Hide Filters</button>
+		</div>
+			<form ng-hide='hideFilters'>
+				Gender: <br>
+		        <input type="radio" ng-model="search.PhysicalAttribute.Gender" id="Female" value="Female"> Female
+		        <input type="radio" ng-model="search.PhysicalAttribute.Gender" id="Male" value="Male"> Male
+		        <p></p>
+
+		        Age:
+		        Age Min: <input type="number" ng-model="search.PhysicalAttribute.AgeRange.Start"><br>
+        		Age Max: <input type="number" ng-model="search.PhysicalAttribute.AgeRange.End">
+		        <p></p>
+		        Ethnicity:<br>
+		        <select ng-model='search.PhysicalAttribute.Ethnicity'>
+		        	<option value=''>Select one</option>
+		        	<option value='Hispanic'>Hispanic</option>
+		        	<option value='Caucasian'>Caucasian</option>
+		        	<option value='Asian'>Asian</option>
+		        	<option value='Afrian American'>African American</option>
+		        </select>
+
+		        Role Type:<br>
+		        <input type="checkbox" ng-model="roletype" value="lead"> Lead Role<br>
+		        <input type="checkbox" ng-model="roletype" value="supporting"> Supporting Role<br>
+		        <input type="checkbox" ng-model="roletype" value="extra"> Extra / Background Role<br>
+		        <p></p>
+
+			    Location:
+		         <input type='text' ng-model='search.Location' placeholder='City or State'
+		        <p></p>
+		      <!--   Keywords:
+        		<input type="text" ng-model="search.$"> -->
+
+			</form>
+		        Keywords:
+        		<input type="text" ng-model="search.$" placeholder='Search by using Keywords '>
+
+		</div>
 </div>

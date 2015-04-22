@@ -1,3 +1,22 @@
-.moveover{padding-left: 20px}
 
 #filterJobs {background-color: #a6e1ec}
+
+.hoverbtn {display: none}
+
+.roleBox {
+  padding: 15px;
+}
+.roleBox:hover {
+  padding:15px;
+  background-color: #d6dde5;
+}
+.roleBox:hover .hoverbtn {
+  display: block;
+  float: right;
+}
+
+.middleplease{
+  position: relative;
+  top: auto;
+  bottom: auto;
+}

@@ -20,13 +20,4 @@ angular.module('castCentricApp')
       $http.delete('/api/things/' + thing._id);
     };
   })
-  .controller('validFormCtrl', function($scope){
-    $scope.addNewUser = function(isValid){
-      if(isValid) {
-        alert("Get ready to see some goodies!")
-      }
-      else{
-        alert("Please fill out form completely")
-      }
-    }
-  });
+

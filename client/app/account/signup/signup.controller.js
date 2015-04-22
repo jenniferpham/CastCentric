@@ -12,7 +12,8 @@ angular.module('castCentricApp')
         Auth.createUser({
           name: $scope.user.name,
           email: $scope.user.email,
-          password: $scope.user.password
+          password: $scope.user.password,
+          userrole: $scope.user.userrole
         })
           .then(function(){
             $scope.userForm.$setPristine();  //set pristine so error messages don't all pop up

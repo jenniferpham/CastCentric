@@ -83,6 +83,13 @@
                 <p ng-show="userForm.password.$invalid && !userForm.password.$pristine" class="help-block">Your password must be between 5 to 10 characters.</p>
               </div>
 
+              <div class="form-group" ng-class="{'has-success': userForm.userrole.$valid, 'has-error': userForm.userrole.$invalid && !userForm.userrole.$pristine}">
+                <label for="userrole">I am a(an) </label>
+                <input name="userrole" type="checkbox" id="userrole" ng-model="user.userrole.actor" required mongoose-error /> Actor
+                <input name="userrole" type="checkbox" id="userrole" ng-model="user.userrole.director" required mongoose-error /> Director
+                <p ng-show="userForm.userrole.$invalid && !userForm.userrole.$pristine" class="help-block">Let us know if you are an actor or director so we can better serve your needs.</p>
+              </div>
+
               <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Sign Up</button>
               <p><a href="/login">I'm already a member.<br>Sign into CastCentric now.</a></p>
             </form>
