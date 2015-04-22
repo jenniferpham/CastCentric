@@ -10,6 +10,7 @@ angular.module('castCentricApp')
   		$scope.actors = actors.filter(function(filterActor){
   			return filterActor._id === $routeParams._id
   		})
+  		console.log(actors);
 
   	});
   });

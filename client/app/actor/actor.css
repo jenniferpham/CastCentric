@@ -16,3 +16,21 @@
 td{
 	color:black;
 }
+
+.socialHeader{
+  margin-bottom:15px;
+  width:300px;
+  padding:12px 12px;
+  background:black;
+  color:white;
+}
+.socialBlock{
+  margin-bottom:15px;
+}
+
+.sidebar{
+
+}
+li{
+  list-style:none;
+}
