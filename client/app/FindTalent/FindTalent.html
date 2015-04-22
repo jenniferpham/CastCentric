@@ -19,25 +19,22 @@
 		</div>
 			<form ng-hide='hideFilters'>
 				Gender: <br>
-		        <input type="checkbox" ng-model="search.PhysicalAttribute.Gender.female" id="female" value="female"> Female
-		        <input type="checkbox" ng-model="search.PhysicalAttribute.Gender.male" id="male" value="male"> Male
+		        <input type="radio" ng-model="search.PhysicalAttribute.Gender" id="Female" value="Female"> Female
+		        <input type="radio" ng-model="search.PhysicalAttribute.Gender" id="Male" value="Male"> Male
 		        <p></p>
 
 		        Age:
-		        <input type="range" ng-model="search.PhysicalAttribute.AgeRange" id="agerange" min="1" max="100">
+		        Age Min: <input type="number" ng-model="search.PhysicalAttribute.AgeRange.Start"><br>
+        		Age Max: <input type="number" ng-model="search.PhysicalAttribute.AgeRange.End">
 		        <p></p>
 		        Ethnicity:<br>
-		        <input type="checkbox" ng-model="ethnicity" id="caucasian"> Caucasian<br>
-		        <input type="checkbox" ng-model="ethnicity" id="africanamer"> African American<br>
-		        <input type="checkbox" ng-model="ethnicity" id="hispanic"> Hispanic<br>
-		        <input type="checkbox" ng-model="ethnicity" id="asian"> Asian<br>
-		        <input type="checkbox" ng-model="ethnicity" id="southasian"> South Asian<br>
-		        <input type="checkbox" ng-model="ethnicity" id="nativeamer"> Native American<br>
-		        <input type="checkbox" ng-model="ethnicity" id="middleeastern"> Middle Eastern<br>
-		        <input type="checkbox" ng-model="ethnicity" id="seapi"> Southeast Asian / Pacific Islander<br>
-		        <input type="checkbox" ng-model="ethnicity" id="mixed"> Ethnically Ambiguous / Mixed Race<br>
-		        <input type="checkbox" ng-model="ethnicity" id="african"> African Descent
-		        <p></p>
+		        <select ng-model='search.PhysicalAttribute.Ethnicity'>
+		        	<option value=''>Select one</option>
+		        	<option value='Hispanic'>Hispanic</option>
+		        	<option value='Caucasian'>Caucasian</option>
+		        	<option value='Asian'>Asian</option>
+		        	<option value='Afrian American'>African American</option>
+		        </select>
 
 		        Role Type:<br>
 		        <input type="checkbox" ng-model="roletype" value="lead"> Lead Role<br>
@@ -46,12 +43,7 @@
 		        <p></p>
 
 			    Location:
-		        <select ng-model="search.Location">
-		          <option value="New York">New York, NY</option>
-		          <option value="Los Angeles">Los Angeles, CA</option>
-		          <option value="San Francisco">San Francisco, CA</option>
-		          <option value="Chicago">Chicago, Il</option>
-		        </select>
+		         <input type='text' ng-model='search.Location' placeholder='City or State'
 		        <p></p>
 		      <!--   Keywords:
         		<input type="text" ng-model="search.$"> -->

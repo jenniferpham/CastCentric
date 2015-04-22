@@ -5,7 +5,7 @@
 
 .workListing, table, th{
   color: #db1e24;
-  font-size: 12px;
+  font-size: 14px;
   text-transform: uppercase;
   height: 35px;
   border-bottom: 1px dotted #999;
@@ -15,6 +15,7 @@
 
 td{
 	color:black;
+  border-bottom:1px dotted #999;
 }
 
 .socialHeader{

@@ -1,5 +1,5 @@
 
-<div class='container' ng-repeat='actor in actors'>
+<div class='container' ng-repeat='actor in actors' style='font-family:Cosmic-san'>
 	<hr>
 		<div class="col-sm-4 sidebar">
 			<div class='socialBlock'>
@@ -13,11 +13,11 @@
 					</div>
 					<div class='row'>
 						<ul>
-							<li><a class='btn btn-lg btn-social-icon btn-facebook'><span class="fa fa-facebook"></span></a> Share</li>
+							<li><a class='btn btn-lg btn-social-icon btn-facebook'><span class="fa fa-facebook"></span></a><strong> Share</strong></li>
 							<hr>
-							<li><a class='btn btn-lg btn-social-icon btn-twitter'><span class="fa fa-twitter"></span></a> Tweet</li>
+							<li><a class='btn btn-lg btn-social-icon btn-twitter'><span class="fa fa-twitter"></span></a><strong> Tweet</strong></li>
 							<hr>
-							<li><a class='btn btn-lg btn-social-icon btn-pinterest'><span class="fa fa-pinterest"></span></a> Pin it</li>
+							<li><a class='btn btn-lg btn-social-icon btn-pinterest'><span class="fa fa-pinterest"></span></a><strong> Pin it</strong></li>
 							<hr>
 						</ul>
 					</div>
@@ -66,7 +66,7 @@
 						<br>
 							<strong>Gender</strong>:{{actor.PhysicalAttribute.Gender}}, <strong>Height</strong>:{{actor.PhysicalAttribute.Height}}, <strong>Build</strong>:{{actor.PhysicalAttribute.Build}}, <strong>Eye Color</strong>: {{actor.PhysicalAttribute.Eyes}}, <strong>Hair</strong>: {{actor.PhysicalAttribute.Hair}}
 				</div>
-				<div class='col-lg-6' ng-repeat='work in actor.WorkHistory'>
+				<div class='col-lg-6'>
 					<h3> 
 						Roles
 					 </h3>
@@ -80,7 +80,7 @@
 						 		</tr>
 						 	</thead>
 						 	<tbody>
-						 		<tr>
+						 		<tr ng-repeat='work in actor.WorkHistory'>
 						 			<td>{{work.Title}}</td>
 						 			<td>{{work.RoleType}}</td>
 						 			<td>{{work.Director}}</td>
@@ -89,21 +89,21 @@
 						 	</tbody>
 					 	</table>
 				</div>
-				<div class='col-lg-6' ng-repeat='school in actor.EducationHistory'>
+				<div class='col-lg-6'>
 					<h3> 
 						Education
 					 </h3>
 					 	<table style='width:100%'>
 						 	<thead>
-						 		<tr valign='top'>
+						 		<tr valign='middle'>
 						 			<th>School</th>
-						 			<th>Degree/Certificate</th>
+						 			<th>Degree</th>
 						 			<th>Location</th>
 						 			<th>Year Graduated</th>
 						 		</tr>
 						 	</thead>
 						 	<tbody>
-						 		<tr>
+						 		<tr ng-repeat='school in actor.EducationTraining'>
 						 			<td>{{school.School}}</td>
 						 			<td>{{school.Degree}}</td>
 						 			<td>{{school.Location}}</td>

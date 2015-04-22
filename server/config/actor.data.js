@@ -94,13 +94,13 @@ Actor.find({}).remove(function(){
 	Email:'JFreeman@gmail.com',
 	ProfileImage: 'http://www.janettezilioli.com/sites/default/files/Janette_Zilioli-Headshot8x10.jpg',
 	Role:'actor',
-	Location: 'Los Angeles, Ca',
+	Location: 'Chicago, Il',
 	WorkHistory: [
 		{
 			Title: 'Avengers',
-			RoleType: 'Lead Role',
+			RoleType: 'Supporting Cast',
 			Director: 'John Whedon',
-			Company: 'Disney'
+			Company: 'Marvel Studios'
 		}
 	],
 	PhysicalAttribute: {
@@ -137,10 +137,10 @@ Actor.find({}).remove(function(){
 	Location: 'Chico, Ca',
 	WorkHistory: [
 		{
-			Title: 'Avengers',
-			RoleType: 'Lead Role',
-			Director: 'John Whedon',
-			Company: 'Disney'
+			Title: 'Blind Side',
+			RoleType: 'Supporting Cast',
+			Director: 'John Lee Hancock',
+			Company: 'Alcon Entertainment'
 		}
 	],
 	PhysicalAttribute:{
@@ -153,7 +153,7 @@ Actor.find({}).remove(function(){
 		Build: 'Built',
 		Hair: 'Comb Over',
 		Eyes: 'Green',
-		Ethnicity: 'Spanish'
+		Ethnicity: 'Caucasian'
 	},
 	EducationTraining:[
 			{
@@ -193,7 +193,7 @@ Actor.find({}).remove(function(){
 		Build: 'Built',
 		Hair: 'Comb Over',
 		Eyes: 'Green',
-		Ethnicity: 'Spanish'
+		Ethnicity: 'Caucasian'
 	},
 	EducationTraining:[
 	{
