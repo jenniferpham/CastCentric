@@ -25,7 +25,7 @@ var JobSchema = new Schema({
     },
     loc: String
   },
-  roles:{
+  roles:[{
     charactername: String,
     typee: {
       online: Boolean,
@@ -47,7 +47,7 @@ var JobSchema = new Schema({
       },
       loc: String
     }
-  },
+  }],
   activepost: {
     start: Date,
     end: Date
