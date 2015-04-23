@@ -2,6 +2,7 @@
 <div class='container'>
 	<div class='row'>
 		<div class='col-md-9 listBorder'>
+			<a href='/updateProfile' class='btn btn-info' ng-show='isLoggedIn()=true'>Add New Actor</a>
 			<hr>
 		<div class="nav nav-stacked col-xs-3" ng-repeat="actor in actors | filter: search">
 			<div class='header'></div>
