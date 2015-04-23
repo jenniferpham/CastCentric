@@ -27,7 +27,10 @@ var JobSchema = new Schema({
   },
   roles:[{
     charactername: String,
-    typee: String,
+    typee: {
+      online: Boolean,
+      person: Boolean
+    },
     gender: String,
     age: Number,
     ethnicity: String,
