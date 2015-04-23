@@ -1,0 +1,78 @@
+<div class="col-md-12">
+  <html>
+  <head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+  </head>
+  <body>
+  <div>
+    <h1>Post an Audition Call</h1>
+    <h2>Production Information</h2>
+    <form ng-submit="addJob()">
+      Name of Production: <input type="text" ng-model="production.name" placeholder="Name of Production"><br>
+      Production Company: <input type="text" ng-model="production.company" placeholder="Name of Production Company"><br>
+      Production Details: <textarea ng-model="production.desc" placeholder="Please describe the production"></textarea><br>
+      Production type:
+      <select name="Production type" ng-model="production.typee">
+        <option value="Film">Film</option>
+        <option value="Television">Television</option>
+        <option value="Theatre">Theatre</option>
+        <option value="Video">Video</option>
+        <option value="Commercial">Commercial</option>
+      </select><br>
+      Production Dates: <br>
+      Production Starts: <input type="date" ng-model="production.date.start"><br>
+      Production Ends: <input type="date" ng-model="production.date.end"><br>
+      Production Location: <input type="text" ng-model="production.loc" placeholder="Location where production will take place"><br>
+
+      <h2>Role information</h2>
+      Name: <input type="text" ng-model="roles.charactername" placeholder="Character Name"><br>
+      Type: <input type="text" ng-model="roles.typee" placeholder="Type of role"><br>
+      Gender: <input type="radio" name="Male" value="Male" ng-model="roles.gender">Male <span></span>
+      <input type="radio" name="Female" value="female" ng-model="roles.gender">Female <br>
+      Character's age: <input type="text" ng-model="roles.age" placeholder="Enter the age of the character"><br>
+      Ethnicity: <input type="text" ng-model="roles.ethnicity" placeholder="Enter ethnicity for this role. Separate by commas if more than one."><br>
+      Description: <input type="text" ng-model="roles.description" placeholder="Please enter a description of the role"><br>
+      Nudity: <select name="Nudity" ng-model="roles.nudity">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+              </select><br>
+      Compensation: <input type="text" ng-model="roles.compensation" placeholder="Compensation or other benefits"><br>
+      Union: <select name="Union" ng-model="roles.union">
+      <option value="Yes">Yes</option>
+      <option value="No">No</option>
+              </select><br>
+      Notes: <input type="text" ng-model="roles.notes" placeholder="Enter any additional notes or requirements for this role.">
+
+      <h2>Audition information</h2>
+      Audition type: <input type="checkbox" name="Online" value="Online" ng-model="audition.typee">Online
+                      <input type="checkbox" name="In person" value="InPerson" ng-model="audition.typee">In Person
+      Auditions Start: <input type="date" ng-model="audition.date.start"><br>
+      Auditions End: <input type="date" ng-model="audition.date.end"><br>
+      Audition Location: <input type="text" ng-model="audition.loc" placeholder="Location where auditions will be held"><br>
+      <br>
+
+      <h2>Rehearsal Information</h2>
+      Rehearsals Start: <input type="date" ng-model="rehearsal.date.start"><br>
+      Rehearsals End: <input type="date" ng-model="rehearsal.date.end"><br>
+      Rehearsals Location: <input type="text" ng-model="rehearsal.loc" placeholder="Location where auditions will be held"><br>
+      <br>
+
+      <h2>When should this job post expire?</h2>
+      Start Job Posting on: <input type="date" ng-model="activepost.start"><br>
+      End Job Posting on: <input type="date" ng-model="activepost.end"><br>
+
+    <button type="submit">Submit</button>
+    </form>
+
+
+
+
+
+
+
+
+  </div>
+  </body>
+  </html>
+</div>
