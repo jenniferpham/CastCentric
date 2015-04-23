@@ -25,9 +25,12 @@ var JobSchema = new Schema({
     },
     loc: String
   },
-  roles:[{
+  roles:{
     charactername: String,
-    typee: String,
+    typee: {
+      online: Boolean,
+      person: Boolean
+    },
     gender: String,
     age: Number,
     ethnicity: String,
@@ -44,7 +47,7 @@ var JobSchema = new Schema({
       },
       loc: String
     }
-  }],
+  },
   activepost: {
     start: Date,
     end: Date
