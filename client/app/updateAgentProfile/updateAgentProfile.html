@@ -1,0 +1,17 @@
+<div class="col-md-12">
+  <body>
+  <h1>Complete your profile</h1>
+  <form name="form" ng-submit="updateAgentProfile()">
+    Name:<input type="text" placeholder="Enter full Name" ng-model="agent.Name"><br>
+    Email::<input type="email" placeholder="Enter email address" ng-model="agent.Email"><br>
+    Location:<select ng-model="agent.location">
+    <option value="Los Angeles">Los Angeles</option>
+    <option value="New York">New York</option>
+    <option value="San Francisco">San Francisco</option>
+    <option value="Miami">Miami</option>
+  </select><br>
+    Description: <input type="text" placeholder="Enter Description" ng-model="agent.Description"><br>
+    <button type="submit">Submit</button>
+  </form>
+  </body>
+</div>

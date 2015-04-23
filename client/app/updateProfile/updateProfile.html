@@ -1,0 +1,64 @@
+<div class="col-md-12">
+    <body>
+    <h1>Complete your profile</h1>
+    <form name="form" ng-submit="updateActorProfile()">
+          Name:<input type="text" placeholder="Enter full Name" ng-model="director.name"><br>
+          Email::<input type="email" placeholder="Enter email address" ng-model="director.email"><br>
+        <div ng-model="user.userrole">
+          Role: <br>
+           Actor: <input type="checkbox" ng-model="director.actor">
+           Casting Director: <input type="checkbox" ng-model="director.CastingDirector">
+          Agent: <input type="checkbox" ng-model="director.agent"><br>
+        </div>
+        Location:<select ng-model="user.location">
+          <option value="Los Angeles">Los Angeles</option>
+          <option value="New York">New York</option>
+          <option value="San Francisco">San Francisco</option>
+          <option value="Miami">Miami</option>
+          </select><br>
+       <h5>Work History:</h5>
+          Title: <input type="text" placeholder="Title of Production" ng-model="user.title"><br>
+          Role Type: <input type="text" placeholder="Role Type" ng-model="user.RoleType"><br>
+          Director: <input type="text" placeholder="Name of Director" ng-model="user.Director"><br>
+          Company: <input type="text" placeholder="Name of Company" ng-model="user.Company"><br>
+       <h5>Physcial Attributes:</h5>
+              Gender: <input type="radio" name="sex" value="male" ng-model="user.gender">Male
+                      <input type="radio" name="sex" value="female" ng-model="user.gender">Female<br>
+              Age Range: <input type="text" placeholder="Start" ng-model="user.Start">
+                         <input type="text" placeholder="end" ng-model="user.End"><br>
+              Height: <input ng-model="user.Height"><br>
+              Build:
+                <select ng-model="user.Build">
+                  <option value="Athletic">Athletic</option>
+                  <option value="Slim">Slim</option>
+                  <option value="Petite">Petite</option>
+                  <option value="Curvy">Curvy</option>
+                  <option value="Muscular">Muscular</option>
+                </select><br>
+              Eyes: <input type="text" ng-model="user.Eyes"><br>
+              Hair: <input type="text" ng-model="user.Hair"><br>
+              <div ng-model="user.Ethnicity">
+                <h5>Ethnicities:</h5>
+                Caucasian: <input type="checkbox"><br>
+                Hispanic: <input type="checkbox"><br>
+                African American: <input type="checkbox"><br>
+                Asian: <input type="checkbox"><br>
+                Middle Eastern: <input type="checkbox"><br>
+                South Asian: <input type="checkbox"><br>
+                Mixed Race: <input type="checkbox"><br>
+              </div>
+
+        Upload Headshots:<br>
+        Upload Videos:<br>
+          <div><h5>Education:</h5>
+            School: <input type="text" placeholder="Enter name of school attended" ng-model="user.School"><br>
+            Teacher: <input type="text" placeholder="Enter name of Teacher" ng-model="user.Teacher"><br>
+            Degree: <input type="text" placeholder="Enter Degree obtained" ng-model="user.Degree"><br>
+            Year Graduated: <input type="number" placeholder="Enter Year Graduated" ng-model="user.Year"><br>
+
+          </div>
+      <button type="submit">Submit</button>
+    </form>
+  </body>
+</div>
+
