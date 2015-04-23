@@ -56,7 +56,7 @@
    <div class="col-sm-4 ">
             <!--FORM-->
             <!--pass in variable if our form is valid or not-->
-            <form name = userForm id="userForm" ng-submit="register(userForm)" ng-controller="SignupCtrl" novalidate>
+            <form name="userForm" id="userForm" ng-submit="register(userForm)" ng-controller="SignupCtrl" novalidate>
               <!--form-header-->
               <h3>Join CastCentric Today!</h3>
               <p>See actor profiles and sign up for jobs and auditions for free!</p>
@@ -84,10 +84,11 @@
               </div>
 
               <div class="form-group" ng-class="{'has-success': userForm.userrole.$valid, 'has-error': userForm.userrole.$invalid && !userForm.userrole.$pristine}">
-                <label for="userrole">I am a(an) </label>
-                <input name="userrole" type="checkbox" id="userrole" ng-model="user.userrole.actor" required mongoose-error /> Actor
-                <input name="userrole" type="checkbox" id="userrole" ng-model="user.userrole.director" required mongoose-error /> Director
-                <p ng-show="userForm.userrole.$invalid && !userForm.userrole.$pristine" class="help-block">Let us know if you are an actor or director so we can better serve your needs.</p>
+                I am a(an)
+                <input name="userrole" type="checkbox" id="actorrole" ng-model="user.userrole.actor" mongoose-error/> Actor
+                <input name="userrole" type="checkbox" id="directorrole" ng-model="user.userrole.director" mongoose-error /> Director
+                <p></p>{{user.userrole}}
+                <p ng-show="user.userrole.actor===false && user.userrole.director ===false" class="help-block">Let us know if you are an actor or director so we can better serve your needs.</p>
               </div>
 
               <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Sign Up</button>

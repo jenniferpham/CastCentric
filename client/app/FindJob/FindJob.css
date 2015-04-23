@@ -1,5 +1,5 @@
 
-#filterJobs {background-color: #a6e1ec}
+#filterForm {background-color: #a6e1ec}
 
 .hoverbtn {display: none}
 
@@ -19,4 +19,12 @@
   position: relative;
   top: auto;
   bottom: auto;
+}
+
+.productionBox {
+  padding: 5px
+}
+.productionBox:hover {
+  background-color: #c4e3f3;
+  padding: 5px
 }

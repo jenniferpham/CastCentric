@@ -18,6 +18,7 @@ module.exports = {
     uri:    process.env.MONGOLAB_URI ||
             process.env.MONGOHQ_URL ||
             process.env.OPENSHIFT_MONGODB_DB_URL+process.env.OPENSHIFT_APP_NAME ||
-            'mongodb://jenniferpham:mongo@ds059661.mongolab.com:59661/castcentric'
+       'mongodb://jenniferpham:mongo@ds059661.mongolab.com:59661/castcentric'
+      //  'mongodb://jenniferpham:mongo@ds061238.mongolab.com:61238/castcentrictest'
   }
 };

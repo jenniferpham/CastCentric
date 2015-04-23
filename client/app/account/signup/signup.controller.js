@@ -13,10 +13,10 @@ angular.module('castCentricApp')
           name: $scope.user.name,
           email: $scope.user.email,
           password: $scope.user.password,
-          userrole: $scope.user.userrole
+          userrole: {actor: $scope.user.userrole.actor, director: $scope.user.userrole.actor}
         })
           .then(function(){
-            $scope.userForm.$setPristine();  //set pristine so error messages don't all pop up
+            form.$setPristine();  //set pristine so error messages don't all pop up
             $scope.user = {}; // make form blank after login
           })
         .then( function() {

@@ -52,7 +52,7 @@ Job.find({}).remove(function(){
           typee: 'Lead',
           gender: 'Female',
           age: 25,
-          ethnicity: 'Any Ethnicity',
+          ethnicity: 'Caucasian',
           description: 'Elphaba is a green-skinned girl who later becomes known as the Wicked Witch of the West. Her birth is shocking to her parents, Melana Thropp and Frexspar the Godly, as in addition to her green skin she had razor sharp teeth (she bites the finger off of a midwife moments after her birth) so Melena refuses to breast feed her. Her father, a union minister, believes it is his fault and Elphaba’s condition is a punishment from the Unnamed God. She attends Shiz University where she meets Glinda and, although they don’t get on at first, become close friends. She also rescues the cowardly lion as a cub from a science experiment. She eventually runs away to the Emerald City to join a resistance group against the Wizard.',
           nudity: false,
           compensation:true,
@@ -92,7 +92,7 @@ Job.find({}).remove(function(){
           typee: 'Background',
           gender: 'Male',
           age: 40,
-          ethnicity: 'Any Ethnicity',
+          ethnicity: ['Caucasian', 'Asian'],
           description: 'Munchkin is an extra that plays a background role in Oz.',
           nudity: false,
           compensation:true,
@@ -113,7 +113,6 @@ Job.find({}).remove(function(){
         end: 'May 15, 2015'
       }
     },
-
     {
       production: {
         name: 'The Avengers',
@@ -272,7 +271,7 @@ Job.find({}).remove(function(){
       production: {
         name: 'Trident Gum Commercial: "Pay Me In Gum"',
         company: 'Hello Production Studios',
-        desc: 'selling some trident gum',
+        desc: 'A commercial takes place in what looks like the 1970s. The breadwinner husband comes home and wants to pay the babysitter in trident gum.  The babysitter wants trident gum as payment and the construction guy sees this and is disappointed that he isn\'t getting paid in gum. This shows how great and valuable trident gum is.',
         typee: 'commercial',
         date: {
           start: 'Sept 1, 2016',
