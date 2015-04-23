@@ -7,9 +7,13 @@ var ActorSchema = new Schema({
 	Name: String,
 	Email: String,
 	ProfileImage: String,
-	Role: String,
+	Role: {
+    actor: String,
+    CastingDirector: String,
+    agent: String
+  },
 	Location: String,
-	WorkHistory: {
+	WorkHistory:{
 		Title: String,
 		RoleType: String,
 		Director: String,
@@ -17,7 +21,7 @@ var ActorSchema = new Schema({
 	},
 	PhysicalAttribute: {
 		Gender: String,
-		AgeRange:{ 
+		AgeRange:{
 			Start: Number,
 			 End: Number
 		},

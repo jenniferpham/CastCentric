@@ -8,6 +8,7 @@ angular.module('castCentricApp')
     $http.get('/api/jobs').success(function(jobs){ //filters create a new array for all items that are true
       $scope.jobs = jobs.filter(function(selectedJobPost){ //selectedJobPost is the actual item from server in the ng-repeat and $routeParams is the :id created in routeprovider .config file
         return selectedJobPost._id === $routeParams.id; //_id because mongo lab automatically creates _id key
+
       })
 
     });

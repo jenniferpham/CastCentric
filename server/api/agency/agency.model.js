@@ -2,10 +2,12 @@ var mongoose = require('mongoose'),
 	Schema = mongoose.Schema
 
 var AgencySchema = new Schema({
+  Name: String,
 	Company: String,
 	Email: String,
 	Location: String,
-	Description: String
+	Description: String,
+  Image: String
 });
 
 

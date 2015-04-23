@@ -1,0 +1,29 @@
+<div class="col-md-12">
+  <body>
+  <h1>Complete your profile</h1>
+  <form name="form" ng-submit="updateDirectorProfile()">
+    Name:<input type="text" placeholder="Enter full Name" ng-model="director.Name"><br>
+    Email::<input type="email" placeholder="Enter email address" ng-model="director.Email"><br>
+    Location:<select ng-model="director.location">
+    <option value="Los Angeles">Los Angeles</option>
+    <option value="New York">New York</option>
+    <option value="San Francisco">San Francisco</option>
+    <option value="Miami">Miami</option>
+  </select><br>
+    <h5>Work History:</h5>
+    Title: <input type="text" placeholder="Title of Production" ng-model="director.Title"><br>
+    Company: <input type="text" placeholder="Name of Company" ng-model="director.Company"><br>
+    Description: <input type="text" placeholder="Enter Description" ng-model="director.Description"><br>
+
+    Upload Headshots:<br>
+    Upload Videos:<br>
+    <div><h5>Education:</h5>
+      School: <input type="text" placeholder="Enter name of school attended" ng-model="director.School"><br>
+      Degree: <input type="text" placeholder="Enter Degree obtained" ng-model="director.Degree"><br>
+      Year Graduated: <input type="number" placeholder="Enter Year Graduated" ng-model="director.Year"><br>
+
+    </div>
+    <button type="submit">Submit</button>
+  </form>
+  </body>
+</div>

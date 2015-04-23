@@ -1,3 +1,27 @@
 <div class="col-md-12">
-This is the FindAgent view.
+  <!-- Search agent -->
+  <input type="text" ng-model="searchAgent" placeholder="Search for an agent">
+  <select ng-model="agency.Location">
+    <option value="New York">New York</option>
+    <option value="Los Angeles">Los Angeles</option>
+    <option value="San Francisco">San Francisco</option>
+    <option value="Chicago">Chicago</option>
+  </select>
+
+
+  <!-- List Agents -->
+  <div ng-repeat = "agents in agent | filter: searchAgent | filter: agency" ng-href="#/agent/{{agents.Company}}">
+
+
+
+  <ul>
+    <li><img src="{{agents.Image}}"></li>
+    <li>{{agents.Company}}</li>
+    <li>{{agents.Location}}</li>
+    <li>{{agents.Description}}</li>
+
+  </ul>
+
+  </div>
 </div>
+

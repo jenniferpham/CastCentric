@@ -1,6 +1,6 @@
 <!--OPTION 1: PICTURE IN BACKGROUND-->
 <div id="background">
- <img src="./assets/images/redcarpetglamour.jpg" class="stretch"/>
+ <!-- <img src="./assets/images/redcarpetglamour.jpg" class="stretch"/> -->
 </div>
 
 <!--OPTION 2: PICTURE ON TOP-->
@@ -84,11 +84,18 @@
               </div>
 
               <div class="form-group" ng-class="{'has-success': userForm.userrole.$valid, 'has-error': userForm.userrole.$invalid && !userForm.userrole.$pristine}">
+<<<<<<< HEAD
                 I am a(an)
                 <input name="userrole" type="checkbox" id="actorrole" ng-model="user.userrole.actor" mongoose-error/> Actor
                 <input name="userrole" type="checkbox" id="directorrole" ng-model="user.userrole.director" mongoose-error /> Director
                 <p></p>{{user.userrole}}
                 <p ng-show="user.userrole.actor===false && user.userrole.director ===false" class="help-block">Let us know if you are an actor or director so we can better serve your needs.</p>
+=======
+                <label for="userrole">I am a(an) </label>
+                <input name="userrole" type="checkbox" id="userroleactor" ng-model="user.userrole.actor" required mongoose-error /> Actor
+                <input name="userrole" type="checkbox" id="userroledirector" ng-model="user.userrole.director" required mongoose-error /> Director
+                <p ng-show="userForm.userrole.$invalid && !userForm.userrole.$pristine" class="help-block">Let us know if you are an actor or director so we can better serve your needs.</p>
+>>>>>>> d3b7ecf16731320b7ae95e1ed774c5e5b23c9311
               </div>
 
               <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Sign Up</button>
