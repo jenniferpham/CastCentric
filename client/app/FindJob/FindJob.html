@@ -5,56 +5,76 @@
     <div class="col-md-3">
       <!--Filter form-->
 
-      <form name="filterJobs" id="filterJobs">
+      <form name="filterForm" id="filterForm">
+        {{job.roles.length}}<br>
         <strong>Find the jobs that are perfect for you!</strong><p></p>
         Gender: <br>
-        <input type="button" id="female" value="female" ng-click="search.roles.gender = 'female'"> Female
-        <input type="button" id="male" value="male" ng-click="search.roles.gender = 'male'"> Male
+        <input type="radio" name="gender" id="female" value="Female" ng-model="rolesearch.gender"> Female
+        <input type="radio" name="gender" id="male" value="Male" ng-model="rolesearch.gender"> Male
         <p></p>
 
         Age:<br>
-        Age Min: <input type="number" ng-model="search.roles.age.min"><br>
-        Age Max: <input type="number" ng-model="search.roles.age.max">
+        Age Min: <input type="number" name="min_age" ng-model="rolesearch.age.min"><br>
+        Age Max: <input type="number" name="max_age" ng-model="rolesearch.age.max">
         <!--<input type="range" ng-model="search.roles.age" id="agerange" min="1" max="100">-->
         <p></p>
-
-        Ethnicity:<br>
-        <input type="checkbox" ng-model="search.roles.ethnicity.caucasian" id="caucasian"> Caucasian<br>
-        <input type="checkbox" ng-model="search.roles.ethnicity.africanamer" id="africanamer"> African American<br>
-        <input type="checkbox" ng-model="search.roles.ethnicity.hispanic" id="hispanic"> Hispanic<br>
-        <input type="checkbox" ng-model="search.roles.ethnicity.asian" id="asian"> Asian<br>
-        <input type="checkbox" ng-model="search.roles.ethnicity.southasian" id="southasian"> South Asian<br>
-        <input type="checkbox" ng-model="search.roles.ethnicity.nativeamer" id="nativeamer"> Native American<br>
-        <input type="checkbox" ng-model="search.roles.ethnicity.middleeastern" id="middleeastern"> Middle Eastern<br>
-        <input type="checkbox" ng-model="search.roles.ethnicity.seapi" id="seapi"> Southeast Asian / Pacific Islander<br>
-        <input type="checkbox" ng-model="search.roles.ethnicity.mixed" id="mixed"> Ethnically Ambiguous / Mixed Race<br>
-        <input type="checkbox" ng-model="search.roles.ethnicity.african" id="african"> African Descent
+        Ethnicity<br>
+        <select name="ethnicity" ng-model="rolesearch.ethnicity">
+          <option value="Caucasian">Caucasian</option>
+          <option value="Asian">Asian</option>
+          <option value="African American">African American</option>
+          <option value="Hispanic">Hispanic</option>
+          <option value="Southeast Asian">Southeast Asian</option>
+          <option value="South Asian">South Asian</option>
+          <option value="Native American">Native American</option>
+          <option value="Middle Eastern">Middle Eastern</option
+          <option value="Mixed">Ethnically Ambiguous/Mixed</option>
+        </select><p></p>
+        <!--Ethnicity:<br>
+        <input type="checkbox" name="ethnicity" ng-model="rolesearch.ethnicity.caucasian" id="caucasian"> Caucasian<br>
+        <input type="checkbox" name="ethnicity" ng-model="rolesearch.ethnicity.africanamer" id="africanamer"> African American<br>
+        <input type="checkbox" name="ethnicity" ng-model="rolesearch.ethnicity.hispanic" id="hispanic"> Hispanic<br>
+        <input type="checkbox" name="ethnicity" ng-model="rolesearch.ethnicity.asian" value="asian" id="asian"> Asian<br>
+        <input type="checkbox" name="ethnicity" ng-model="rolesearch.ethnicity.southasian" id="southasian"> South Asian<br>
+        <input type="checkbox" name="ethnicity" ng-model="rolesearch.ethnicity.nativeamer" id="nativeamer"> Native American<br>
+        <input type="checkbox" name="ethnicity" ng-model="rolesearch.ethnicity.middleeastern" id="middleeastern"> Middle Eastern<br>
+        <input type="checkbox" name="ethnicity" ng-model="rolesearch.ethnicity.seapi" id="seapi"> Southeast Asian / Pacific Islander<br>
+        <input type="checkbox" name="ethnicity" ng-model="rolesearch.ethnicity.mixed" id="mixed"> Ethnically Ambiguous / Mixed Race<br>
+        <input type="checkbox" name="ethnicity" ng-model="rolesearch.ethnicity.african" id="african"> African Descent
         <p></p>
-
+-->
         Production Type:<br>
-        <input type="checkbox" ng-model="search.production.typee.theater" value="theater"> Theater/Play<br>
-        <input type="checkbox" ng-model="search.production.typee.movie" value="movie"> Movie<br>
-        <input type="checkbox" ng-model="search.production.typee.tv" value="tv"> TV Show<br>
-        <input type="checkbox" ng-model="search.production.typee.commercial" value="commercial"> Commercial
+        <input type="checkbox" ng-model="prodsearch.production.typee.theater" value="theater"> Theater/Play<br>
+        <input type="checkbox" ng-model="prodsearch.production.typee.movie" value="movie"> Movie<br>
+        <input type="checkbox" ng-model="prodsearch.production.typee.tv" value="tv"> TV Show<br>
+        <input type="checkbox" ng-model="prodsearch.production.typee.commercial" value="commercial"> Commercial
         <p></p>
 
         Role Type:<br>
-        <input type="checkbox" ng-model="search.role.typee.lead" value="lead"> Lead Role<br>
-        <input type="checkbox" ng-model="search.role.typee.supporting" value="supporting"> Supporting Role<br>
-        <input type="checkbox" ng-model="search.role.typee.extra" value="extra"> Extra / Background Role<br>
+        <select ng-model="rolesearch.typee" name="roletype">
+          <option value="lead">Lead Role</option>
+          <option value="supporting">Supporting Role</option>
+          <option value="background">Background Role</option>
+        </select>
+     <!--   <input type="checkbox" name="roletype" ng-model="rolesearch.typee.lead" value="lead"> Lead Role<br>
+        <input type="checkbox" name="roletype" ng-model="rolesearch.typee.supporting" value="supporting"> Supporting Role<br>
+        <input type="checkbox" name="roletype" ng-model="rolesearch.typee.extra" value="extra"> Extra / Background Role<br>-->
         <p></p>
 
         Compensation (per $__/mo)?<br>
-        <input type="range" ng-model="compensation" id="compensation" min="10" max="10000">
+        <input type="radio" name="compensation" ng-model="rolesearch.compensation" id="paidcompensation" value="true">Paid
+        <input type="radio" name="compensation" ng-model="rolesearch.compensation" id="unpaidcompensation" value="false">Unpaid
         <p></p>
 
         Union Status<br>
-        <input type="radio" value="true" ng-model="union" id="union"> Yes
-        <input type="radio" value="false" ng-model="union" id="nounion"> No
+        <input type="radio" name="union" value="true" ng-model="rolesearch.union" id="union"> Yes
+        <input type="radio" name="union" value="false" ng-model="rolesearch.union" id="nounion"> No
+        <br>
+        {{rolesearch.union}}
         <p></p>
 
-        Location:
-        <select ng-model="search.rehearsal.loc">
+        Audition Location:
+        <select name="auditionlocation" ng-model="rolesearch.audition.loc">
           <option value="New York">New York, NY</option>
           <option value="Los Angeles">Los Angeles, CA</option>
           <option value="San Francisco">San Francisco, CA</option>
@@ -64,22 +84,29 @@
 
         Keywords:
         <input type="text" ng-model="search.$">
+        <p></p>
+        <button type="button" class="btn-sm btn btn-primary" ng-click="startover(filterForm)">Clear Form</button>
       </form>
    </div>
   <div class="col-md-9">
+    For Casting Directors: <a href="/postjob"><button type="button" class="btn btn-warning">Add New Job</button></a>
     <!--Diplay preview of jobs in job database from server-->
-    <div ng-repeat="job in jobs | jobFilter: search">
+    <div ng-repeat="job in jobs | jobFilter: filterForm: prodsearch: rolesearch" >
+    <!--<div ng-repeat="job in jobs | jobFilter: filterForm: prodsearch: rolesearch" >-->
+    <!--// <div ng-repeat="job in jobs | jobFilter: filterForm: prodsearch: rolesearch" >-->
+      <div class="productionBox">
       <!--anything I put after the custom filter will be the 2nd paramter. 1st parameter is automatically jobs or what is being filtered-->
       <h2>{{job.production.name}}</h2>
     <!--ng-repeat="job in filteredJobs = (jobs | filter:{role.rehearsal.loc: location}) OR | filter: search-->
         <!--<h3>{{job.production.name}}</h3><br>-->
       <!--| filter:{productionname: filter_productionname, productiondesc: filter_productiondesc}-->
-        {{job.production.desc | limitTo:500}}{{job.production.desc.length > 500 ? '...' : ''}}<br>
+        {{job.production.desc | limitTo:500}}{{job.production.desc.length > 500 ? '...':''}}<br>
       <strong>Production Type:</strong> {{job.production.typee}}<br>
       <strong>Date:</strong> {{job.production.date.start | date: "MMMM dd, yyyy"}} to {{job.production.date.end | date: "MMMM dd, yyyy"}}<br>
       <strong>Location:</strong> {{job.production.loc}}<p></p>
       <p></p>
       <a href='/jobs/{{job._id}}'><button type="submit" class="btn btn-success">Find Out More</button></a>
+      </div>
       <p></p>
       <h3>Roles Available</h3>
         <div ng-repeat="role in job.roles" class="roleBox row">
@@ -101,8 +128,26 @@
             <button type="button" class="btn btn-primary btn-sm" ng-show="restOfRole" ng-click="restOfRole=false">Close Details</button>
 
           </div>
-          <div class="col-md-2 middleplease">
-            <a href=""><button type="submit" class="btn hoverbtn btn-danger">Apply Now</button></a>
+          <div class="col-md-2 middleplease" ng-controller="ModalDemoCtrl" >
+           <button ng-click="open()" class="btn hoverbtn btn-danger">Apply Now</button>
+
+            <div id="jobapplyform">
+              <script type="text/ng-template" id="myModalContent.html">
+                <div class="modal-header">
+                  <h3 class="modal-title">Apply For Acting Role</h3>
+                </div>
+                <div class="modal-body">
+                  Upload Completed Job Application: <input type="file"><br>
+                  Upload Resume: <input type="file"><p></p>
+                  The casting director will also have access to your CastCentric actor profile to see any headshots and video reels you have available.
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" ng-click="ok()">Send Application Now</button>
+                  <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                </div>
+              </script>
+            </div>
+
           </div>
         </div>
       <hr>
@@ -112,3 +157,4 @@
 
 </div>
 </div>
+

@@ -51,12 +51,12 @@
           </p>
         </div>
 
-        <div class="form-group" ng-class="{'has-success': userForm.userrole.$valid, 'has-error': userForm.userrole.$invalid && !userForm.userrole.$pristine}">
-          <label for="userrole">I am a(an) </label>
-          <input name="userrole" type="checkbox" id="userrole" ng-model="user.userrole.actor" required mongoose-error /> Actor
-          <input name="userrole" type="checkbox" id="userrole" ng-model="user.userrole.director" required mongoose-error /> Director
-          <p ng-show="userForm.userrole.$invalid && !userForm.userrole.$pristine" class="help-block">Let us know if you are an actor or director so we can better serve your needs.</p>
-        </div>
+      <!--  <div class="form-group" ng-class="{'has-success': form.userrole.$valid, 'has-error': form.userrole.$invalid && !form.userrole.$pristine}">
+          I am a(an)
+          <input name="userrole" type="radio" id="actor" ng-model="user.userrole.actor" required mongoose-error /> Actor
+          <input name="userrole" type="radio" id="director" ng-model="user.userrole.director" required mongoose-error /> Director
+          <p ng-show="form.userrole.$invalid && !form.userrole.$pristine" class="help-block">Let us know if you are an actor or director so we can better serve your needs.</p>
+        </div>-->
 
         <div>
           <button class="btn btn-inverse btn-lg btn-login" type="submit">

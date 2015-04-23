@@ -33,10 +33,29 @@
               <strong>Nudity:</strong>  {{role.nudity | sayYesNo}}<br>
               <strong>Director Notes:</strong> {{role.notes}}
           </div>
-          <div class="col-md-2 middleplease">
-            <a href=""><button type="submit" class="btn btn-danger">Apply Now</button></a>
+          <div class="col-md-2 middleplease"  ng-controller="ModalDemoCtrl">
+            <button type="submit" class="btn btn-danger hoverbtn" ng-click="open()">Apply Now</button>
+
+            <!--Job Application Modal-->
+            <div id="jobapplyform">
+              <script type="text/ng-template" id="myModalContent.html">
+                <div class="modal-header">
+                  <h3 class="modal-title">Apply For Acting Role</h3>
+                </div>
+                <div class="modal-body">
+                  Upload Completed Job Application: <input type="file"><br>
+                  Upload Resume: <input type="file"><p></p>
+                  The casting director will also have access to your CastCentric actor profile to see any headshots and video reels you have available.
+                </div>
+                <div class="modal-footer">
+                  <button class="btn btn-primary" ng-click="ok()">Send Application Now</button>
+                  <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                </div>
+              </script>
+            </div>
           </div>
         </div>
 
   </div>
+</div>
 </div>
