@@ -1,6 +1,6 @@
 <!--OPTION 1: PICTURE IN BACKGROUND-->
 <div id="background">
- <img src="./assets/images/redcarpetglamour.jpg" class="stretch"/>
+ <!-- <img src="./assets/images/redcarpetglamour.jpg" class="stretch"/> -->
 </div>
 
 <!--OPTION 2: PICTURE ON TOP-->
@@ -85,8 +85,8 @@
 
               <div class="form-group" ng-class="{'has-success': userForm.userrole.$valid, 'has-error': userForm.userrole.$invalid && !userForm.userrole.$pristine}">
                 <label for="userrole">I am a(an) </label>
-                <input name="userrole" type="checkbox" id="userrole" ng-model="user.userrole.actor" required mongoose-error /> Actor
-                <input name="userrole" type="checkbox" id="userrole" ng-model="user.userrole.director" required mongoose-error /> Director
+                <input name="userrole" type="checkbox" id="userroleactor" ng-model="user.userrole.actor" required mongoose-error /> Actor
+                <input name="userrole" type="checkbox" id="userroledirector" ng-model="user.userrole.director" required mongoose-error /> Director
                 <p ng-show="userForm.userrole.$invalid && !userForm.userrole.$pristine" class="help-block">Let us know if you are an actor or director so we can better serve your needs.</p>
               </div>
 
