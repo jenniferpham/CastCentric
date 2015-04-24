@@ -15,10 +15,7 @@ var ActorSchema = new Schema({
 		Director: String,
 		Company: String
 	}],
-	PhysicalAttribute: [{
-
 	PhysicalAttribute: {
-
 		Gender: String,
 		AgeRange:{
 			Start: Number,
@@ -29,10 +26,7 @@ var ActorSchema = new Schema({
 		Hair: String,
 		Eyes: String,
 		Ethnicity: String
-	}],
-
 	},
-
 	EducationTraining:[{
 		School: String,
 		Teacher: String,
