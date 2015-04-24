@@ -7,19 +7,18 @@ var ActorSchema = new Schema({
 	Name: String,
 	Email: String,
 	ProfileImage: String,
-	Role: {
-    actor: String,
-    CastingDirector: String,
-    agent: String
-  },
+	Role:String,
 	Location: String,
-	WorkHistory:{
+	WorkHistory:[{
 		Title: String,
 		RoleType: String,
 		Director: String,
 		Company: String
-	},
+	}],
+	PhysicalAttribute: [{
+
 	PhysicalAttribute: {
+
 		Gender: String,
 		AgeRange:{
 			Start: Number,
@@ -30,14 +29,17 @@ var ActorSchema = new Schema({
 		Hair: String,
 		Eyes: String,
 		Ethnicity: String
+	}],
+
 	},
-	EducationTraining:{
+
+	EducationTraining:[{
 		School: String,
 		Teacher: String,
 		Degree: String,
 		Location: String,
 		Year: Number
-	},
+	}],
 	OpUrl: String
 });
 

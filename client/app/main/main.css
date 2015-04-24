@@ -1,7 +1,7 @@
 
 #banner {
     border-bottom: none;
-    margin-top: 0px;
+    margin-top: 0;
     padding-top: 0;
     top:0
 }
@@ -66,15 +66,15 @@ h3{
 
 
 form {
-  background: #d6dde5;
 
+  background: #D6DDE5;
   padding: 15px;
   border-radius: 10px;
   margin-left: 50px;
 }
 
 .box {
-  background: white;
+  background: linen;
   opacity: .8;
   padding: 10px 15px;
   border-radius: 10px;
@@ -91,4 +91,7 @@ ul.ok li:before {
   content: '\f00c';
   margin:0 5px 0 -15px;
 
+}
+.customNav a{
+  color:white;
 }

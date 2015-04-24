@@ -85,9 +85,20 @@
 
               <div class="form-group" ng-class="{'has-success': userForm.userrole.$valid, 'has-error': userForm.userrole.$invalid && !userForm.userrole.$pristine}">
                 I am a(an)
+<<<<<<< HEAD
                 <input name="userrole" type="checkbox" id="userroleactor" ng-model="user.userrole.actor" required mongoose-error /> Actor
                 <input name="userrole" type="checkbox" id="userroledirector" ng-model="user.userrole.director" required mongoose-error /> Director
                 <p ng-show="userForm.userrole.$valid && !userForm.userrole.$pristine" class="help-block">Let us know if you are an actor or director so we can better serve your needs.</p>
+=======
+                <input name="userrole" type="checkbox" id="actorrole" ng-model="user.userrole.actor" mongoose-error/> Actor
+                <input name="userrole" type="checkbox" id="directorrole" ng-model="user.userrole.director" mongoose-error /> Director
+                <p></p>{{user.userrole}}
+                <p ng-show="user.userrole.actor===false && user.userrole.director ===false" class="help-block">Let us know if you are an actor or director so we can better serve your needs.</p>
+                <label for="userrole">I am a(an) </label>
+                <input name="userrole" type="checkbox" id="userroleactor" ng-model="user.userrole.actor" required mongoose-error /> Actor
+                <input name="userrole" type="checkbox" id="userroledirector" ng-model="user.userrole.director" required mongoose-error /> Director
+                <p ng-show="userForm.userrole.$invalid && !userForm.userrole.$pristine" class="help-block">Let us know if you are an actor or director so we can better serve your needs.</p>
+>>>>>>> ac80e9345c771b796cd71a5ccf4c0593541e1a10
               </div>
 
               <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Sign Up</button>

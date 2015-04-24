@@ -26,9 +26,9 @@ Actor.find({}).remove(function(){
 		},
 		Height: "5'10",
 		Build: 'Built',
-		Hair: 'Comb Over',
+		Hair: 'Wavy',
 		Eyes: 'Green',
-		Ethnicity: 'Spanish'
+		Ethnicity: 'Hispanic'
 	},
 	EducationTraining:[
 		{
@@ -71,9 +71,9 @@ Actor.find({}).remove(function(){
 		},
 		Height: "5'10",
 		Build: 'Built',
-		Hair: 'Comb Over',
+		Hair: 'Long Brunette',
 		Eyes: 'Green',
-		Ethnicity: 'Spanish'
+		Ethnicity: 'Hispanic'
 	},
 	EducationTraining:[
 		{
@@ -111,16 +111,16 @@ Actor.find({}).remove(function(){
 		},
 		Height: "5'10",
 		Build: 'Built',
-		Hair: 'Comb Over',
+		Hair: 'Long dark black',
 		Eyes: 'Green',
 		Ethnicity: 'Hispanic/Caucasian'
 	},
 	EducationTraining:[
 		{
-			School: 'Santa Monica College',
+			School: 'San Jose College',
 			Teacher: '',
-			Degree: 'Theater',
-			Location: 'Los Angeles,CA',
+			Degree: 'Theater/Arts',
+			Location: 'San jose,CA',
 			Year: 2014
 		}
 	],
@@ -191,16 +191,16 @@ Actor.find({}).remove(function(){
 		},
 		Height: "5'10",
 		Build: 'Built',
-		Hair: 'Comb Over',
+		Hair: 'Medium Brunette',
 		Eyes: 'Green',
 		Ethnicity: 'Caucasian'
 	},
 	EducationTraining:[
 	{
-		School: 'Los Angeles College',
+		School: 'Orange Coast College',
 		Teacher: '',
 		Degree: 'Theater',
-		Location: 'Los Angeles,CA',
+		Location: 'Costa Mesa,CA',
 		Year: 2014
 	}
 	],
