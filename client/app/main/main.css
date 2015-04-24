@@ -65,7 +65,7 @@ h3{
 
 
 form {
-  background: white;
+  background: #D6DDE5;
   opacity: .8;
   padding: 15px;
   border-radius: 10px;
@@ -73,7 +73,7 @@ form {
 }
 
 .box {
-  background: white;
+  background: linen;
   opacity: .8;
   padding: 10px 15px;
   border-radius: 10px;
@@ -90,4 +90,7 @@ ul.ok li:before {
   content: '\f00c';
   margin:0 5px 0 -15px;
 
+}
+.customNav a{
+  color:white;
 }

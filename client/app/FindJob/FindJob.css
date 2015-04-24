@@ -28,3 +28,7 @@
   background-color: #c4e3f3;
   padding: 5px
 }
+.nav-pills > li.active > a:hover, .nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: darkred;
+}
