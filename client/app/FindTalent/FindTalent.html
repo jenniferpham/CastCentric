@@ -7,7 +7,7 @@
 		<div class="nav nav-stacked col-xs-3" ng-repeat="actor in actors | filter: search">
 			<div class='header'></div>
 				<li><a href='/actors/{{actor._id}}'><img class='picList' src='{{actor.ProfileImage}}'></a></li>
-				<li>{{actor.Name}}</li>
+				<li><h4>{{actor.Name}}</h4></li>
 				<li>{{actor.PhysicalAttribute.AgeRange.Start}}-{{actor.PhysicalAttribute.AgeRange.End}}</li>
 			</div>
 

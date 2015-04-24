@@ -13,18 +13,21 @@
 
 
   <!-- List Agents -->
+  <hr>
+  <div class='container'>
   <div class="nav nav-stacked col-xs-3" ng-repeat = "agents in agent | filter: searchAgent | filter: agency" ng-href="#/agent/{{agents.Company}}">
 
 
 
   <ul>
     <li><img class="picList" src="{{agents.Image}}"></li>
-    <li>{{agents.Company}}</li>
+    <li><h4>{{agents.Company}}</h4></li>
     <li>{{agents.Location}}</li>
     <li>{{agents.Description}}</li>
 
   </ul>
 
+  </div>
   </div>
 </div>
 </div>

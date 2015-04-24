@@ -36,8 +36,8 @@ var JobSchema = new Schema({
     ethnicity: String,
     description: String,
     nudity: Boolean,
-    compensation:Boolean,
-    union: Boolean,
+    compensation:String,
+    union: String,
     notes: String,
     audition: {
       typee: String,
