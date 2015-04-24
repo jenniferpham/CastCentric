@@ -209,5 +209,45 @@ Actor.find({}).remove(function(){
 		twitter:'www.twitter.com',
 		pinterest:'www.pinterest.com'
 	}
+	},{
+	Name: 'Jennifer Gardener',
+	Email:'Jgardner@gmail.com',
+	ProfileImage: 'https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcRnUtmqsAqqCSEfow_8THMA8X375XXmeLIU5TSDR9uT7lP8ezWPVw',
+	Role:'actor',
+	Location: 'Houston, TX',
+	WorkHistory:[
+		{
+			Title: 'Draft Day',
+			RoleType: 'Support role',
+			Director: 'Ivan Reitman',
+			Company: 'Odd Entertainment'
+		}
+	],
+	PhysicalAttribute: {
+		Gender: 'Female',
+		AgeRange:{
+			Start: 26,
+		    End: 43
+		},
+		Height: "5'10",
+		Build: 'slim',
+		Hair: 'Long Brunette',
+		Eyes: 'Green',
+		Ethnicity: 'Caucasian'
+	},
+	EducationTraining:[
+	{
+		School: 'Denison University',
+		Teacher: '',
+		Degree: 'Theater',
+		Location: 'Granville, OH',
+		Year: 2014
+	}
+	],
+	OpUrl:{
+		facebook:'Facebook.com',
+		twitter:'www.twitter.com',
+		pinterest:'www.pinterest.com'
+	}
 	})
 });
