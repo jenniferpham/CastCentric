@@ -2,7 +2,7 @@
 <div class='container'>
 	<div class='row'>
 		<div class='col-md-9 listBorder'>
-			<a href='/updateProfile' class='btn btn-info' ng-show='isLoggedIn()=true'>Add New Actor</a>
+			<a href='/updateProfile' class='btn btn-info' ng-show='isLoggedIn()'>Add New Actor</a>
 			<hr>
 		<div class="nav nav-stacked col-xs-3" ng-repeat="actor in actors | filter: search">
 			<div class='header'></div>
@@ -36,13 +36,6 @@
 		        	<option value='Asian'>Asian</option>
 		        	<option value='Afrian American'>African American</option>
 		        </select>
-
-		        Role Type:<br>
-		        <input type="checkbox" ng-model="roletype" value="lead"> Lead Role<br>
-		        <input type="checkbox" ng-model="roletype" value="supporting"> Supporting Role<br>
-		        <input type="checkbox" ng-model="roletype" value="extra"> Extra / Background Role<br>
-		        <p></p>
-
 			    Location:
 		         <input type='text' ng-model='search.Location' placeholder='City or State'
 		        <p></p>

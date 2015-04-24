@@ -6,17 +6,17 @@ var mongoose = require('mongoose'),
 		Email: String,
 		Role: String,
 		Location: String,
-		WorkHistory:{
+		WorkHistory:[{
 			Title: String,
 			Comapny: String,
 			Description: String
-		},
+		}],
 		ProfileImage: String,
-		Education:{
+		Education:[{
 			School: String,
 			Degree: String,
 			Year: Number
-		},
+		}],
 		OpUrl: String
 	});
 

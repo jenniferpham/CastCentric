@@ -15,17 +15,17 @@ angular.module('castCentricApp')
           agent: $scope.director.agent
         },
         Location: $scope.director.location,
-        WorkHistory: {
+        WorkHistory: [{
           Title: $scope.director.Title,
           Comapny: $scope.director.Company,
           Description: $scope.director.Description
-        },
+        }],
         ProfileImage: $scope.director.ProfileImage,
-        Education: {
+        Education: [{
           School: $scope.director.School,
           Degree: $scope.director.Degree,
           Year: $scope.director.Year
-        },
+        }],
         OpUrl: $scope.director.OpUrl
       })
     }
