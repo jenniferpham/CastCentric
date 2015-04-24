@@ -14,5 +14,11 @@ $scope.updateAgentProfile = function(){
     Description: $scope.agent.Description,
     Image: $scope.agent.Image
   })
+    $scope.agent.Name ='';
+    $scope.agent.Company ='';
+    $scope.agent.Email ='';
+    $scope.agent.Location ='';
+    $scope.agent.Description ='';
+    $scope.agent.Image ='';
 }
 });
