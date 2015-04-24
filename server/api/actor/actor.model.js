@@ -34,7 +34,11 @@ var ActorSchema = new Schema({
 		Location: String,
 		Year: Number
 	}],
-	OpUrl: String
+	OpUrl: {
+		facebook:String,
+		twitter:String,
+		pinterest:String
+	}
 });
 
 module.exports = mongoose.model('Actor', ActorSchema);
