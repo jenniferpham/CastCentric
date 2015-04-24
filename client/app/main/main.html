@@ -1,6 +1,6 @@
 <!--OPTION 1: PICTURE IN BACKGROUND-->
 <div id="background">
- <!-- <img src="./assets/images/redcarpetglamour.jpg" class="stretch"/> -->
+<!--  <img src="./assets/images/redlights.jpg" class="stretch"/>-->
 </div>
 
 <!--OPTION 2: PICTURE ON TOP-->
@@ -32,7 +32,7 @@
                   <li>Find jobs and auditions in your local area or nationwide</li>
                   <li>Market yourself through headshots, video reels, work experience, and more</li>
                 </ul>
-                <a href="">Find out how CastCentric can help you today!</a><br>
+                Find out how CastCentric can help you today!<br>
                 <a href="/Testimonials">See what other actors say about CastCentric</a>
               </div>
           </div>
@@ -47,16 +47,16 @@
                   <li>Scan through our extensive database of actors for talent that you need</li>
                   <li>See actors’ headshots, video reels, work experience, and more</li>
                 </ul>
-                <a href="">Find out how CastCentric can help you today!</a><br>
+                Find out how CastCentric can help you today!<br>
                 <a href="/Testimonials">See what other agents and directors say about CastCentric</a>
               </div>
           </div>
     </div>
 
-   <div class="col-sm-4 ">
+   <div class="col-sm-4">
             <!--FORM-->
             <!--pass in variable if our form is valid or not-->
-            <form name="userForm" id="userForm" ng-submit="register(userForm)" ng-controller="SignupCtrl" novalidate>
+            <form role="form" name="userForm" id="userForm" ng-submit="register(userForm)" ng-controller="SignupCtrl" novalidate>
               <!--form-header-->
               <h3>Join CastCentric Today!</h3>
               <p>See actor profiles and sign up for jobs and auditions for free!</p>
@@ -84,18 +84,10 @@
               </div>
 
               <div class="form-group" ng-class="{'has-success': userForm.userrole.$valid, 'has-error': userForm.userrole.$invalid && !userForm.userrole.$pristine}">
-<<<<<<< HEAD
                 I am a(an)
-                <input name="userrole" type="checkbox" id="actorrole" ng-model="user.userrole.actor" mongoose-error/> Actor
-                <input name="userrole" type="checkbox" id="directorrole" ng-model="user.userrole.director" mongoose-error /> Director
-                <p></p>{{user.userrole}}
-                <p ng-show="user.userrole.actor===false && user.userrole.director ===false" class="help-block">Let us know if you are an actor or director so we can better serve your needs.</p>
-=======
-                <label for="userrole">I am a(an) </label>
                 <input name="userrole" type="checkbox" id="userroleactor" ng-model="user.userrole.actor" required mongoose-error /> Actor
                 <input name="userrole" type="checkbox" id="userroledirector" ng-model="user.userrole.director" required mongoose-error /> Director
-                <p ng-show="userForm.userrole.$invalid && !userForm.userrole.$pristine" class="help-block">Let us know if you are an actor or director so we can better serve your needs.</p>
->>>>>>> d3b7ecf16731320b7ae95e1ed774c5e5b23c9311
+                <p ng-show="userForm.userrole.$valid && !userForm.userrole.$pristine" class="help-block">Let us know if you are an actor or director so we can better serve your needs.</p>
               </div>
 
               <button type="submit" class="btn btn-primary" ng-disabled="userForm.$invalid">Sign Up</button>

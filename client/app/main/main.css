@@ -12,6 +12,7 @@
     letter-spacing: -1px;
 }
 
+
 .img-circle{
   width: 140px;
   height: 140px
@@ -65,8 +66,8 @@ h3{
 
 
 form {
-  background: white;
-  opacity: .8;
+  background: #d6dde5;
+
   padding: 15px;
   border-radius: 10px;
   margin-left: 50px;

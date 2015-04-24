@@ -1,12 +1,14 @@
 'use strict';
 
 angular.module('castCentricApp')
-  .controller('FindJobCtrl', function ($scope, $http) {
+  .controller('FindJobCtrl', function ($scope, $http, Auth) {
     $scope.jobs = [];
 
     $http.get('/api/jobs').success(function (jobs) {  //callback fcn - info from server comes back as called jobs
       $scope.jobs = jobs;  //makes jobs database from server available to the dom
-    })
+    });
+
+    $scope.isLoggedIn = Auth.isLoggedIn;
 
     $scope.startover = function (form) {
       form.$setPristine();
@@ -73,6 +75,9 @@ angular.module('castCentricApp')
           var jobItem = existingJobArray[i];
           var validRole = true;
 
+          if ((filterForm.production_type.$dirty) && (filterProdItem.production.typee !== jobItem.production.typee)){
+            validRole=false;
+          };
         /*  if (filterProdItem.production.typee &&  (filterProdItem.production.typee !== jobItem.production.typee)){
             validRole=false;
           } //PROBABLY GONNA BE WRONG BECAUSE IT"S THE KEY INSIDE TEH TYPEE THAT IS SET TO TRUE
@@ -87,25 +92,28 @@ angular.module('castCentricApp')
             if ((filterForm.gender.$dirty) && (filterInput.gender !== roleCharacter.gender)){
               validRole=false;
             };
-
+            if ((filterForm.min_age.$dirty && (roleCharacter.age > filterInput.age.max)) || (filterForm.max_age.$dirty) && (roleCharacter.age < filterInput.age.min)){
+              validRole=false;
+            };
             if ((filterForm.ethnicity.$dirty) && (filterInput.ethnicity !== roleCharacter.ethnicity)){
               validRole=false;
-            }
-            if ((filterForm.min_age.$valid && (roleCharacter.age > filterInput.age.max)) || (filterForm.max_age.$valid) && (roleCharacter.age < filterInput.age.min)){
-              validRole=false;
             };
-
-            if ((filterForm.union.$dirty) && !(filterInput.union === roleCharacter.union)) {
-                validRole = false
-              };
-            if ((filterForm.compensation.$dirty) && !(filterInput.compensation === roleCharacter.compensation)) {
-              validRole = false
-            };
-            if ((filterForm.roletype.$dirty) && (filterInput.typee === roleCharacter.typee)){
+            if ((filterForm.roletype.$dirty) && (filterInput.typee !== roleCharacter.typee)){
               validRole=false;
               //get which keys are equal to true
               // match that key with roleCharacter.typee string
-              }
+            };
+
+            if ((filterForm.compensation.$dirty) && (filterInput.compensation !== roleCharacter.compensation)) {
+              validRole = false
+            };
+
+            if ((filterForm.union.$dirty) && (filterInput.union !== roleCharacter.union)) {
+                validRole = false
+              };
+            if ((filterForm.audition_location.$dirty) && !(filterInput.audition.loc === roleCharacter.audition.loc)){
+              validRole=false;
+            }
 
 
               //For text dropdown menu - check if field is valid using formName.formfieldName.$valid

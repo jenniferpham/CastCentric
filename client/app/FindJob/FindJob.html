@@ -6,16 +6,16 @@
       <!--Filter form-->
 
       <form name="filterForm" id="filterForm">
-        {{job.roles.length}}<br>
-        <strong>Find the jobs that are perfect for you!</strong><p></p>
+        <strong><h4>Find the jobs that are perfect for you!</h4></strong><p></p>
         Gender: <br>
         <input type="radio" name="gender" id="female" value="Female" ng-model="rolesearch.gender"> Female
         <input type="radio" name="gender" id="male" value="Male" ng-model="rolesearch.gender"> Male
         <p></p>
 
         Age:<br>
-        Age Min: <input type="number" name="min_age" ng-model="rolesearch.age.min"><br>
-        Age Max: <input type="number" name="max_age" ng-model="rolesearch.age.max">
+        I want a role from age
+        <br><input type="number" name="min_age" ng-model="rolesearch.age.min" min="0" max="100"> to
+        <input type="number" name="max_age" ng-model="rolesearch.age.max" min="0" max="100">
         <!--<input type="range" ng-model="search.roles.age" id="agerange" min="1" max="100">-->
         <p></p>
         Ethnicity<br>
@@ -27,8 +27,8 @@
           <option value="Southeast Asian">Southeast Asian</option>
           <option value="South Asian">South Asian</option>
           <option value="Native American">Native American</option>
-          <option value="Middle Eastern">Middle Eastern</option
-          <option value="Mixed">Ethnically Ambiguous/Mixed</option>
+          <option value="Middle Eastern">Middle Eastern</option>
+          <option value="Mixed">Mixed</option>
         </select><p></p>
         <!--Ethnicity:<br>
         <input type="checkbox" name="ethnicity" ng-model="rolesearch.ethnicity.caucasian" id="caucasian"> Caucasian<br>
@@ -43,44 +43,50 @@
         <input type="checkbox" name="ethnicity" ng-model="rolesearch.ethnicity.african" id="african"> African Descent
         <p></p>
 -->
-        Production Type:<br>
-        <input type="checkbox" ng-model="prodsearch.production.typee.theater" value="theater"> Theater/Play<br>
-        <input type="checkbox" ng-model="prodsearch.production.typee.movie" value="movie"> Movie<br>
-        <input type="checkbox" ng-model="prodsearch.production.typee.tv" value="tv"> TV Show<br>
-        <input type="checkbox" ng-model="prodsearch.production.typee.commercial" value="commercial"> Commercial
-        <p></p>
 
         Role Type:<br>
         <select ng-model="rolesearch.typee" name="roletype">
-          <option value="lead">Lead Role</option>
-          <option value="supporting">Supporting Role</option>
-          <option value="background">Background Role</option>
+          <option value="Lead">Lead Role</option>
+          <option value="Supporting">Supporting Role</option>
+          <option value="Background">Background Role</option>
         </select>
      <!--   <input type="checkbox" name="roletype" ng-model="rolesearch.typee.lead" value="lead"> Lead Role<br>
         <input type="checkbox" name="roletype" ng-model="rolesearch.typee.supporting" value="supporting"> Supporting Role<br>
         <input type="checkbox" name="roletype" ng-model="rolesearch.typee.extra" value="extra"> Extra / Background Role<br>-->
         <p></p>
 
-        Compensation (per $__/mo)?<br>
-        <input type="radio" name="compensation" ng-model="rolesearch.compensation" id="paidcompensation" value="true">Paid
-        <input type="radio" name="compensation" ng-model="rolesearch.compensation" id="unpaidcompensation" value="false">Unpaid
+        Compensation<br>
+        <input type="radio" name="compensation" id="paid" value="paid" ng-model="rolesearch.compensation"> Paid
+        <input type="radio" name="compensation" id="unpaid" value="unpaid" ng-model="rolesearch.compensation"> Unpaid
         <p></p>
 
         Union Status<br>
-        <input type="radio" name="union" value="true" ng-model="rolesearch.union" id="union"> Yes
-        <input type="radio" name="union" value="false" ng-model="rolesearch.union" id="nounion"> No
-        <br>
-        {{rolesearch.union}}
+        <input type="radio" name="union" value="union" ng-model="rolesearch.union" id="union"> Union
+        <input type="radio" name="union" value="nonunion" ng-model="rolesearch.union" id="nounion"> Non-Union
         <p></p>
 
         Audition Location:
-        <select name="auditionlocation" ng-model="rolesearch.audition.loc">
+        <select name="audition_location" ng-model="rolesearch.audition.loc">
           <option value="New York">New York, NY</option>
           <option value="Los Angeles">Los Angeles, CA</option>
           <option value="San Francisco">San Francisco, CA</option>
           <option value="Chicago">Chicago, Il</option>
         </select>
         <p></p>
+
+        Production Type:<br>
+        <select ng-model="prodsearch.production.typee" name="production_type">
+          <option value="theater">Theater/Play</option>
+          <option value="film">Movie Films</option>
+          <option value="tv">TV Show</option>
+          <option value="video">Music Video</option>
+          <option value="commercial">Commercial</option>
+        </select><p></p><!--
+        <input type="checkbox" ng-model="prodsearch.production.typee.theater" value="theater"> Theater/Play<br>
+        <input type="checkbox" ng-model="prodsearch.production.typee.movie" value="movie"> Movie<br>
+        <input type="checkbox" ng-model="prodsearch.production.typee.tv" value="tv"> TV Show<br>
+        <input type="checkbox" ng-model="prodsearch.production.typee.commercial" value="commercial"> Commercial
+        <p></p>-->
 
         Keywords:
         <input type="text" ng-model="search.$">
@@ -89,9 +95,9 @@
       </form>
    </div>
   <div class="col-md-9">
-    For Casting Directors: <a href="/postjob"><button type="button" class="btn btn-warning">Add New Job</button></a>
+    <a href="/PostJob" ng-show="isLoggedIn()">For Casting Directors: <button type="button" class="btn btn-warning">Add New Job</button></a>
     <!--Diplay preview of jobs in job database from server-->
-    <div ng-repeat="job in jobs | jobFilter: filterForm: prodsearch: rolesearch" >
+    <div ng-repeat="job in jobs | jobFilter:filterForm: prodsearch: rolesearch | filter: search" >
     <!--<div ng-repeat="job in jobs | jobFilter: filterForm: prodsearch: rolesearch" >-->
     <!--// <div ng-repeat="job in jobs | jobFilter: filterForm: prodsearch: rolesearch" >-->
       <div class="productionBox">

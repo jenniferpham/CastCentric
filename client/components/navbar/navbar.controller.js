@@ -17,11 +17,12 @@ angular.module('castCentricApp')
       {
         'title': 'Find Agent',
         'link': '/FindAgent'
-      },
-      {
-        'title': 'Testimonials',
-        'link': '/Testimonials'
-      }];
+      }
+      //{
+      //  'title': 'Testimonials',
+      //  'link': '/Testimonials'
+      //}
+      ];
 
     $scope.isCollapsed = true;
     $scope.isLoggedIn = Auth.isLoggedIn;

@@ -1,7 +1,10 @@
 
-#filterForm {background-color: #a6e1ec}
 
 .hoverbtn {display: none}
+
+input[type="number"]{
+  width: 65px
+}
 
 .roleBox {
   padding: 15px;
@@ -25,6 +28,6 @@
   padding: 5px
 }
 .productionBox:hover {
-  background-color: #c4e3f3;
+  background-color: linen;
   padding: 5px
 }
