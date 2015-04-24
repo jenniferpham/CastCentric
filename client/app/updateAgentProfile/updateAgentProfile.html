@@ -1,17 +1,31 @@
-<div class="col-md-12">
+<div class="container">
+  <div class="row">
+    <div class="col-md-9">
   <body>
   <h1>Complete your profile</h1>
   <form name="form" ng-submit="updateAgentProfile()">
-    Name:<input type="text" placeholder="Enter full Name" ng-model="agent.Name"><br>
-    Email::<input type="email" placeholder="Enter email address" ng-model="agent.Email"><br>
-    Location:<select ng-model="agent.location">
-    <option value="Los Angeles">Los Angeles</option>
-    <option value="New York">New York</option>
-    <option value="San Francisco">San Francisco</option>
-    <option value="Miami">Miami</option>
-  </select><br>
-    Description: <input type="text" placeholder="Enter Description" ng-model="agent.Description"><br>
-    <button type="submit">Submit</button>
+    <div class="form-group">
+        <label>Name:</label>
+        <input class="form-control" type="text" placeholder="Enter full Name" ng-model="agent.Name">
+    </div><br>
+    <div class="form-group">
+    <label>Email:</label>
+    <input class="form-control" type="email" placeholder="Enter email address" ng-model="agent.Email">
+      </div><br>
+    <label>Location:</label>
+      <select class="form-control" ng-model="agent.location">
+      <option value="Los Angeles">Los Angeles</option>
+      <option value="New York">New York</option>
+      <option value="San Francisco">San Francisco</option>
+      <option value="Miami">Miami</option>
+    </select><br>
+    <label>Upload Headshot:</label>
+      <input class="form-control" type="url" name="pic" accept="image/*" ng-model="user.Image"><br>
+    <label>Description:</label>
+      <input class="form-control" type="text" placeholder="Enter Description" ng-model="agent.Description"><br>
+    <button type="submit" class="btn btn-primary">Submit</button>
   </form>
   </body>
+    </div>
+  </div>
 </div>
