@@ -1,7 +1,10 @@
-<div class="col-md-12">
+<div class='container'>
+  <div class='row'>
+    <div class='col-md-9 listBorder'>
+
   <!-- Search agent -->
   <input type="text" ng-model="searchAgent" placeholder="Search for an agent">
-  <select ng-model="agency.Location">
+  <select name="Location" ng-model="agency.Location">
     <option value="New York">New York</option>
     <option value="Los Angeles">Los Angeles</option>
     <option value="San Francisco">San Francisco</option>
@@ -10,12 +13,12 @@
 
 
   <!-- List Agents -->
-  <div ng-repeat = "agents in agent | filter: searchAgent | filter: agency" ng-href="#/agent/{{agents.Company}}">
+  <div class="nav nav-stacked col-xs-3" ng-repeat = "agents in agent | filter: searchAgent | filter: agency" ng-href="#/agent/{{agents.Company}}">
 
 
 
   <ul>
-    <li><img src="{{agents.Image}}"></li>
+    <li><img class="picList" src="{{agents.Image}}"></li>
     <li>{{agents.Company}}</li>
     <li>{{agents.Location}}</li>
     <li>{{agents.Description}}</li>
@@ -24,4 +27,5 @@
 
   </div>
 </div>
-
+</div>
+</div>

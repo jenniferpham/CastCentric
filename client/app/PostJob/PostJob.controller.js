@@ -7,5 +7,14 @@ angular.module('castCentricApp')
       $scope.jobs = jobs;
     });
     $scope.addJob = function(){
-     $http.post('/api/jobs', { production: { name:$scope.production.name, company: $scope.production.company, desc:$scope.production.desc, typee:$scope.production.typee, date:{ start:$scope.production.date.start, end:$scope.production.date.end}, loc:$scope.production.loc}, rehearsal: {date: {start:$scope.rehearsal.date.start, end:$scope.rehearsal.date.end}, loc:$scope.rehearsal.loc}, roles: [{charactername: $scope.roles.charactername, typee:$scope.roles.typee, gender:$scope.roles.gender, age:$scope.roles.age, ethnicity:$scope.roles.ethnicity, description:$scope.roles.description, nudity:$scope.roles.nudity, compensation:$scope.roles.compensation, union:$scope.roles.union, notes:$scope.roles.notes}], audition: {typee: $scope.audition.typee, date: {start:$scope.audition.date.start, end:$scope.audition.date.end}, loc:$scope.audition.loc}, activepost: {start:$scope.activepost.start, end:$scope.activepost.end}})}});
+     $http.post('/api/jobs', { production: { name:$scope.production.name, company: $scope.production.company, desc:$scope.production.desc, typee:$scope.production.typee, date:{ start:$scope.production.date.start, end:$scope.production.date.end}, loc:$scope.production.loc}, rehearsal: {date: {start:$scope.rehearsal.date.start, end:$scope.rehearsal.date.end}, loc:$scope.rehearsal.loc}, roles: [{charactername: $scope.roles.charactername, typee:$scope.roles.typee, gender:$scope.roles.gender, age:$scope.roles.age, ethnicity:$scope.roles.ethnicity, description:$scope.roles.description, nudity:$scope.roles.nudity, compensation:$scope.roles.compensation, union:$scope.roles.union, notes:$scope.roles.notes}], audition: {typee: $scope.audition.typee, date: {start:$scope.audition.date.start, end:$scope.audition.date.end}, loc:$scope.audition.loc}, activepost: {start:$scope.activepost.start, end:$scope.activepost.end}})}
 
+form.$setPristine();  //set pristine so error messages don't all pop up
+    $scope.production = {}; // make form blank after login
+    $scope.roles = {}; // make form blank after login
+    $scope.audition = {}; // make form blank after login
+    $scope.rehearsal = {}; // make form blank after login
+
+
+
+  });
